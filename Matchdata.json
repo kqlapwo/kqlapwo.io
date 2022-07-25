@@ -1,5 +1,5 @@
-
-data=
+{
+"data" =
 	[{
     	"matchnumber":"1",
     	"hometeam":"토트넘",
@@ -13,3 +13,4 @@ data=
     "homescore": "3",
     "awayscore" : "0"}
      ]
+}
