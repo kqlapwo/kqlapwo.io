@@ -46,14 +46,13 @@
 
 $(function() {
 	$("button").on("click", buttonClick);
+	
 });
 
-
- // 자바 스크립트 함수 
  function buttonClick() {
 	 var trNum = $(this).closest('tr').prevAll().length;
-        alert('trNum : ' + trNum);
-	 location.href = "https://kqlapwo.github.io/kqlapwo.io/statistics.html";
+            alert('trNum : ' + trNum);
+
 }
  
 
