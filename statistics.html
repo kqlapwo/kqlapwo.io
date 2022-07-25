@@ -11,12 +11,12 @@
     matchsports = data[1];
     alert(matchnumber + " " + matchsports);
 </script>
-                           
- <script src="Matchdata.json" type="text/javascript">
- let mydata = JSON.parse(JSON.stringify(data));
-alert(mydata);
-	   </script>
-                           
+
+<script type="module" src="Matchdata.js">
+import data from 'Matchdata.js';
+
+alert(data);
+	</script>         
                            
                            
                            
