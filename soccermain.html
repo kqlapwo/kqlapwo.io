@@ -6,21 +6,31 @@
 </head>
 	<script>let url = "https://kqlapwo.github.io/kqlapwo.io/statistics.html" </script>
 <body>
-	<script language = "javascript">
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>$(document).ready(function () {
+  $('.clickBtn').bind('click', function() {
+            var trNum = $(this).closest('tr').prevAll().length;
+        });
+});</script>
+<script language = "javascript">
 		function statistcs(){
-    matchnumber = btn.value+"_videoCh";
-    location.href="변수를 전달받을 html파일 이름.html?" + chatChannelId + "/" + chatChannelName + "/" + videoChatName;
+    matchnumber = trNum;
+    location.href="https://kqlapwo.github.io/kqlapwo.io/statistics.html" + trNum;
 		}
 </script>
-
 <table border="1">
-	<th>최근 경기 결과</th>
-	<th>홈</th>
-    <th></th>
-    <th>:</th>
-    <th></th>
-    <th>원정</th>
-	<th>통계</th>
+    <tr>
+	<td>최근 경기 결과</td>
+	<td>홈</td>
+    <td></td>
+    <td>:</td>
+    <td></td>
+    <td>원정</td>
+	<td>통계</td>
+	
+	</tr>
 	<tr><!-- 첫번째 줄 시작 -->
 	    <td>1</td>
 	    <td>토트넘</td>
@@ -42,20 +52,5 @@
 		<td><button type="button" class="clickBtn">통계</button></td>
 	</tr><!-- 두번째 줄 끝 -->
 </body>
-	<script type="text/javascript">
-
-$(function() {
-	$("button").on("click", buttonClick);
 	
-});
-
- function buttonClick() {
-	 var trNum = $(this).closest('tr').prevAll().length;
-            alert('trNum : ' + trNum);
-
-}
- 
-
-
-</script>
 </html>
