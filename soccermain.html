@@ -6,6 +6,13 @@
 </head>
 	<script>let url = "https://kqlapwo.github.io/kqlapwo.io/statistics.html" </script>
 <body>
+	<script language = "javascript">
+		function statistcs(){
+    matchnumber = btn.value+"_videoCh";
+    location.href="변수를 전달받을 html파일 이름.html?" + chatChannelId + "/" + chatChannelName + "/" + videoChatName;
+		}
+</script>
+
 <table border="1">
 	<th>최근 경기 결과</th>
 	<th>홈</th>
@@ -21,7 +28,8 @@
 	    <td>:</td>
 	    <td>1</td>
 	    <td>레인저스</td>
-		<td><a href="https://kqlapwo.github.io/kqlapwo.io/statistics.html">통계</a></td>
+		<td><button type="button" class="clickBtn">통계</button>
+		
 		
 	</tr><!-- 첫번째 줄 끝 -->
 	<tr><!-- 두번째 줄 시작 -->
@@ -31,7 +39,36 @@
 	    <td>:</td>
 	    <td>0</td>
 	    <td>리버풀</td>
-		<td><a href="https://kqlapwo.github.io/kqlapwo.io/statistics.html">통계</a></td>
+		<td><button type="button" class="clickBtn">통계</button>
 	</tr><!-- 두번째 줄 끝 -->
 </body>
+	<script type="text/javascript">
+
+$(function() {
+	/* $("#ptag").click(function() {
+		alert('click');
+	});
+	
+	$("button").click(function() {
+		alert("button click");
+	});
+	$("#ptag").on("click", function () {
+		alert("p tag");
+	});
+	 */
+	 // 자바스크립트 function불러오기  ()없음
+	$("button").on("click", buttonClick);
+});
+
+
+ // 자바 스크립트 함수 
+ function buttonClick() {
+	 var trNum = $(this).closest('tr').prevAll().length;
+        alert('trNum : ' + trNum);
+	 location.href = "https://kqlapwo.github.io/kqlapwo.io/statistics.html";
+}
+ 
+
+
+</script>
 </html>
