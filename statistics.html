@@ -8,17 +8,17 @@
         <script type="text/javascript" >
          
     temp = location.href.split("?");
-    data=temp[1].split("/");
-    matchnumber = data[0];
-    matchsports = data[1];
-    matchnumber = parseInt(matchnumber);
-    alert(matchnumber + " " + matchsports);
+    clickeddata=temp[1].split("/");
+    clicked = clickeddata[0];
+    matchsports = clickeddata[1];
+    clicked = parseInt(clicked);
+    //alert(clicked + " " + matchsports);
             function load() {
                 var mydata = JSON.parse(data);
  
                 var div = document.getElementById('data');
-                     alert(mydata[matchnumber - 1].matchnumber + ". " + mydata[matchnumber - 1].hometeam + " " + mydata[matchnumber - 1].homescore + " : "+ mydata[matchnumber - 1].awayscore + " " + mydata[matchnumber - 1].awayteam);
-                
+                     alert(mydata[clicked - 1].matchnumber + ". " + mydata[clicked - 1].hometeam + " " + mydata[clicked - 1].homescore + " : "+ mydata[clicked - 1].awayscore + " " + mydata[clicked - 1].awayteam);
+          
             }
          load();
         </script>                     
