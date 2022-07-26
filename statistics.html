@@ -6,9 +6,15 @@
   <title>Statistics</title>
    <script type="text/javascript" src="matchdata.json"></script>
         <script type="text/javascript" >
+         
+    temp = location.href.split("?");
+    data=temp[1].split("/");
+    matchnumber = data[0];
+    matchsports = data[1];
+    alert(matchnumber + " " + matchsports);
             function load() {
                 var mydata = JSON.parse(data);
-
+ 
                 var div = document.getElementById('data');
                      alert(mydata[parseInt(matchnumber)].matchnumber + ". " + mydata[parseInt(matchnumber)].hometeam + " " + mydata[parseInt(matchnumber)].homescore + " : "+ mydata[parseInt(matchnumber)].awayscore + " " + mydata[parseInt(matchnumber)].awayteam);
                 
@@ -16,13 +22,6 @@
          load();
         </script>                     
  </head>
- <script language = "javascript">
-    temp = location.href.split("?");
-    data=temp[1].split("/");
-    matchnumber = data[0];
-    matchsports = data[1];
-    alert(matchnumber + " " + matchsports);
-</script>
 
   <body>
         <div id="data">
