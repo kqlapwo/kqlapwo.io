@@ -16,7 +16,7 @@
                 var mydata = JSON.parse(data);
  
                 var div = document.getElementById('data');
-                     alert(mydata[parseInt(matchnumber)].matchnumber + ". " + mydata[parseInt(matchnumber)].hometeam + " " + mydata[parseInt(matchnumber)].homescore + " : "+ mydata[parseInt(matchnumber)].awayscore + " " + mydata[parseInt(matchnumber)].awayteam);
+                     alert(mydata[matchnumber - 1].matchnumber + ". " + mydata[matchnumber - 1].hometeam + " " + mydata[matchnumber - 1].homescore + " : "+ mydata[matchnumber - 1].awayscore + " " + mydata[matchnumber - 1].awayteam);
                 
             }
          load();
