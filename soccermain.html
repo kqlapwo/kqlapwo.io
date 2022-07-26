@@ -21,6 +21,17 @@
 matchsports = "soccer";
     location.href="statistics.html?" + matchnumber + "/" + matchsports;
 		}
+	function load() {
+                var mydata = JSON.parse(data);
+
+                var div = document.getElementById('data');
+
+                for(var i = 0;i < mydata.length; i++)
+                {
+                     alert(mydata[i].matchnumber + ". " + mydata[i].hometeam + " " + mydata[i].homescore + " : "+ mydata[i].awayscore + " " + mydata[i].awayteam);
+                }
+            }
+         load();
 </script>
 <table border="1">
     <tr>
