@@ -28,21 +28,6 @@
     </table>
    <script type="text/javascript" src="matchdata.json"></script>
         <script type="text/javascript" >
-            function statistics(data){
-matchnumber = data;
-matchsports = "soccer";
-location.href="statistics.html?" + matchnumber + "/" + matchsports;
-alert("ddd")
-    }
-            $(document).ready(function () {
-        $("button").click( function() {
-            
-            
-            var trNum = $(this).closest('tr').prevAll().length;
-    
-      statistics(trNum);
-        });
-      });
              function toDOM(row, number) {
         var tr = "";
         tr += "<tr>";
