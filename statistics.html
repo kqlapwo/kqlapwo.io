@@ -4,24 +4,19 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
   <meta charset = "utf-8">
   <title>Statistics</title>
-                        <script>
+   <script type="text/javascript" src="matchdata.json"></script>
+        <script type="text/javascript" >
+            function load() {
+                var mydata = JSON.parse(data);
 
-    $(function() {
+                var div = document.getElementById('data');
 
-
-   var matchdata = [];
-
-   $.getJSON('matchdata.json', function(data) {
-       $.each(data.match, function(i, f) {
-          var tblRow = "<tr>" + "<td>" + f.matchnumber + "</td>" +
-           "<td>" + f.hometeam + "</td>" + "<td>" + f.awayteam + "</td>" + "<td>" + f.homescore + "</td>"  + "<td>" + f.awayscore + "</td>" +"</tr>"
-           $(tblRow).appendTo("#matchdata tbody");
-     });
-
-   });
-
-});
-</script>
+                for(var i = 0;i < mydata.length; i++)
+                {
+                    div.innerHTML = div.innerHTML + "<p class='inner' id="+i+">"+ mydata[i].matchnumber + ". " + mydata[i].hometeam + " " + mydata[i].homescore + " : "+ mydata[i].awayscore + " " + mydata[i].awayteam +"</p>" + "<br>";
+                }
+            }
+        </script>                     
  </head>
  <script language = "javascript">
     temp = location.href.split("?");
@@ -31,27 +26,10 @@
     alert(matchnumber + " " + matchsports);
 </script>
 
-                           
-                           
-<body>
+  <body onload="load()">
+        <div id="data">
 
-<div class="wrapper">
-<div class="profile">
-   <table id= "matchdata" border="2">
-  <thead>
-            <th>matchnumber</th>
-            <th>hometeam</th>
-            <th>awayteam</th>
-            <th>homescore</th>
-            <th>awayscore</th>
-        </thead>
-      <tbody>
+        </div>
+    </body>                         
 
-       </tbody>
-   </table>
-
-</div>
-</div>
-
-</body>
 </html>
