@@ -35,12 +35,13 @@
         var tr = "";
         tr += "<tr>";
         tr += "  <td>" + row.matchnumber + "</td>";
-        var teamurl = "teamstatistics.html?" + row.hometeamname
-        tr += "  <td>" + "<a href = "+ teamurl+ ">"+ row.hometeam + "</a>" + "</td>";
+        var hometeamurl = "teamstatistics.html?" + row.hometeamname
+        tr += "  <td>" + "<a href = "+ hometeamurl+ ">"+ row.hometeam + "</a>" + "</td>";
         tr += "  <td>" + row.homescore + "</td>";
         tr += "  <td>" + ":" + "</td>";
         tr += "  <td>" + row.awayscore + "</td>";
-        tr += "  <td>" + row.awayteam + "</td>";
+        var awayteamurl = "teamstatistics.html?" + row.awayteamname 
+        tr += "  <td>" + "<a href = "+ awayteamurl+ ">"+ row.awayteam + "</a>" + "</td>";
         tr += "  <td>" + row.matchdate  + "</td>";
         var url = "statistics.html?" + row.matchnumber + "/" + "soccer";
         tr += "  <td>" + "<a href =" + url + ">" +  "통계" + "</a>"  + "</td>";
