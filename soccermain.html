@@ -21,24 +21,37 @@
           <td>:</td>
           <td></td>
           <td>원정팀</td>
+          <td>날짜</td>
           <td>통계</td>
+          <td>경기</td>
         </tr>
       </thead>
       <tbody></tbody>
     </table>
    <script type="text/javascript" src="matchdata.json"></script>
         <script type="text/javascript" >
-             function toDOM(row, number) {
+             function toDOM(row, number) {  
+          
         var tr = "";
         tr += "<tr>";
         tr += "  <td>" + row.matchnumber + "</td>";
-        tr += "  <td>" + row.hometeam + "</td>";
+        var teamurl = "teamstatistics.html?" + row.hometeamname
+        tr += "  <td>" + "<a href = "+ teamurl+ ">"+ row.hometeam + "</a>" + "</td>";
         tr += "  <td>" + row.homescore + "</td>";
         tr += "  <td>" + ":" + "</td>";
         tr += "  <td>" + row.awayscore + "</td>";
         tr += "  <td>" + row.awayteam + "</td>";
+        tr += "  <td>" + row.matchdate  + "</td>";
         var url = "statistics.html?" + row.matchnumber + "/" + "soccer";
         tr += "  <td>" + "<a href =" + url + ">" +  "통계" + "</a>"  + "</td>";
+        var matchdone = "";
+        if(row.homeshoot > 0) {
+            matchdone = "종료"
+        }
+        else{
+            matchdone = "경기전"
+        }
+        tr += "  <td>" + matchdone + "</td>";
         tr += "</tr>";
         return tr;
       }
@@ -54,16 +67,13 @@
       }
 
       window.onload = function () {
-
-        renderTable("table", load());
+        renderTable("table", matchload());
       };
-            function load() {
+            function matchload() {
                 var mydata = JSON.parse(data);
-                var div = document.getElementById('data');
                 return mydata;
             }
         </script>                     
-
 
   <body>
         <div id="data">
