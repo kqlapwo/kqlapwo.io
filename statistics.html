@@ -1,28 +1,101 @@
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<!doctype html>
+<html lang="ko">
+ <head>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
   <meta charset = "utf-8">
   <title>Statistics</title>
+  
+   </head>
+  <script language = "javascript">
+    
+</script>
+<body>
+    <script></script>
+    <!-- HTML -->
+    <table id="table" class="table">
+      <thead>
+        <tr>
+          <td>번호</td>
+          <td>홈팀</td>
+          <td></td>
+          <td>:</td>
+          <td></td>
+          <td>원정팀</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
    <script type="text/javascript" src="matchdata.json"></script>
         <script type="text/javascript" >
 
-    temp = location.href.split("?");
-    clickeddata=temp[1].split("/");
-    clicked = clickeddata[0];
-    matchsports = clickeddata[1];
-    clicked = parseInt(clicked);
-    //alert(clicked + " " + matchsports);
-            function load() {
+function load() {
                 var mydata = JSON.parse(data);
-                var div = document.getElementById('data');
-                     alert(mydata[clicked - 1].matchnumber + ". " + mydata[clicked - 1].hometeam + " " + mydata[clicked - 1].homescore + " : "+ mydata[clicked - 1].awayscore + " " + mydata[clicked - 1].awayteam);
+                return mydata;
             }
-         load();
+temp = location.href.split("?");
+clickeddata=temp[1].split("/");
+clicked = clickeddata[0];
+matchsports = clickeddata[1];
+clicked = parseInt(clicked);
+//alert(clicked + " " + matchsports);
+             function toDOM(row, number) {
+        var tr = "";
+        tr += "<tr>";
+        tr += "  <td>" + row.matchnumber + "</td>";
+        tr += "  <td>" + row.hometeam + "</td>";
+        tr += "  <td>" + row.homescore + "</td>";
+        tr += "  <td>" + ":" + "</td>";
+        tr += "  <td>" + row.awayscore + "</td>";
+        tr += "  <td>" + row.awayteam + "</td>";
+        tr += "</tr>"
+        return tr;
+      }
+      function statisticstoDOM(row, number, trList) {
+        var tr = "";
+        tr += "<tr>";
+        tr += "  <td>" +"슈팅"+ "</td>";
+        tr += "  <td>"  + "</td>";
+        tr += "  <td>" + row.homeshoot + "</td>";
+        
+        tr += "  <td>" + ":" + "</td>";
+        tr += "  <td>" + row.awayshoot + "</td>";
+        tr += "  <td>"  + "</td>";
+        tr += "</tr>";
+        trList += tr;
+        tr = "";
+        tr += "<tr>";
+        tr += "  <td>" +"유효슈팅"+ "</td>";
+        tr += "  <td>"  + "</td>";
+        tr += "  <td>" + row.homeotshoot + "</td>";
+        tr += "  <td>" + ":" + "</td>";
+        tr += "  <td>" + row.awayotshoot + "</td>";
+        tr += "  <td>"  + "</td>";
+        tr += "</tr>";
+        trList += tr;
+        return trList;
+      }
+
+      function renderTable(id, dataList, number) {
+        
+        var size = dataList.length;
+        var trList = "";
+        var statisticstrList = "";
+          trList += toDOM(dataList[number], number);
+          trList += statisticstoDOM(dataList[number], number, statisticstrList);
+        
+        document.querySelector("#" + id + " tbody").innerHTML = trList;
+      }
+
+      window.onload = function () {
+        renderTable("table", load(), clicked-1);
+      };
         </script>                     
- </head>
+
 
   <body>
         <div id="data">
 
         </div>
-    </body>                         
+    </body>                   
 
 </html>
