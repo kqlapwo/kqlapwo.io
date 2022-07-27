@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+  <meta charset = "utf-8">
+  <title>Team Statistics</title>
+  
+   </head>
+<body>
+    <script>
+        temp = location.href.split("?");
+        clickeddata=temp[1].split("/");
+        clickedteam = clickeddata[0];
+        
+    var scriptsrc = clickedteam+".json"
+    </script>
+   <script>
+    var script = document.createElement('script');
+    script.src = clickedteam+".json";
+    document.getElementsByTagName('script')[0].parentNode.appendChild(script);
+    </script>  
+        <script type="text/javascript" id="script" >
+             function toDOM(row) {
+        var tr = "";
+        tr += "<tr>";
+        tr += "  <td>" + row.name + "</td>";
+        tr += "  <td>" + row.goal + "</td>";
+        tr += "  <td>" + row.assist + "</td>";
+        tr += "</tr>"
+        return tr;
+      }
+
+      function renderTable(id, dataList) {
+        
+        var size = dataList.length;
+        var trList = "";
+        for (var i = 0; i < size; i++) {
+          trList += toDOM(dataList[i], i);
+        }
+        document.querySelector("#" + id + " tbody").innerHTML = trList;
+      }
+
+      window.onload = function () {
+        renderTable("table", teamload());
+      };
+            function teamload() {
+                var mydata = JSON.parse(data);
+                return mydata;
+            }
+        </script>                     
+
+  <body>
+    <!-- HTML -->
+    <table id="table" class="table">
+      <thead>
+        <tr>
+            <td>선수</td>
+            <td>득점</td>
+            <td>어시스트</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+        <div id="data">
+
+        </div>
+    </body>                   
+
+</html>
