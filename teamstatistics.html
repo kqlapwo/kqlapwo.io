@@ -21,6 +21,7 @@
 	    
    $(document).ready(function() {
 	    $.getJSON('teamlist.json', function(data) {
+		    alert("HI")
 	     var trList = "";
       var nowteamname = "";
 	      $.each(data, function(i, item) {
