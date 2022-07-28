@@ -1,10 +1,25 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<table id="table" class="table">
+      <thead>
+        <tr>
+          <td>번호</td>
+          <td>홈팀</td>
+          <td></td>
+          <td>:</td>
+          <td></td>
+          <td>원정팀</td>
+          <td>날짜</td>
+          <td>통계</td>
+          <td>경기</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 <script>
 	$(document).ready(function() {
 		
 	    $.getJSON('matchdata.json', function(data) {
 	     var trList = "";
-	      var html = [];
 	      
 	      $.each(data, function(i, item) {
 		      	var tr = "";
