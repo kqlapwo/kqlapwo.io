@@ -26,9 +26,10 @@
       var nowteamname = "";
 		     var count = 0;
 	      $.each(data, function(i, item) {
-		     
+		     nowteamname = "";
 		      count = parseInt(count);
 		      $.each(item, function(j, fitem) {
+			      
 		      	var tr = "";
 			      alert(count)
      if(count > 0) {
@@ -41,7 +42,7 @@
         tr += "</tr>";
 		      trList+=tr;
 		      document.querySelector("#" + "table" + " tbody").innerHTML = trList;
-	 nowteamname = "";
+	 
  }
  }
  else {nowteamname = fitem;
