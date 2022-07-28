@@ -32,9 +32,10 @@
 clickeddata=temp[1].split("/");
 clicked = clickeddata[0];
 matchsports = clickeddata[1];
+	
+		alert(clicked)
 clicked = parseInt(clicked);
 	$(document).ready(function() {
-		alert(clicked)
 	    $.getJSON('matchdata.json', function(data) {
 	     var trList = "";
 	      
@@ -89,7 +90,7 @@ clicked = parseInt(clicked);
 	    });
     </script>
   <body>
-        <div id="data">
+        <div id="target">
 
         </div>
     </body>                   
