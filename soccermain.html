@@ -1,18 +1,5 @@
-<!doctype html>
-<html lang="ko">
- <head>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
-  <meta charset = "utf-8">
-  <title>Statistics</title>
-  <button onclick = 'location.href = "soccermain.html"'>축구 일정/결과</button>
-   </head>
-  <script language = "javascript">
-    
-</script>
-<body>
-    <script></script>
-    <!-- HTML -->
-    <table id="table" class="table">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<table id="table" class="table">
       <thead>
         <tr>
           <td>번호</td>
@@ -28,22 +15,25 @@
       </thead>
       <tbody></tbody>
     </table>
-   <script type="text/javascript" src="matchdata.json"></script>
-        <script type="text/javascript" >
-             function toDOM(row, number) {  
-          
-        var tr = "";
+<script>
+	$(document).ready(function() {
+		
+	    $.getJSON('matchdata.json', function(data) {
+	     var trList = "";
+	      
+	      $.each(data, function(i, item) {
+		      	var tr = "";
         tr += "<tr>";
-        tr += "  <td>" + row.matchnumber + "</td>";
-        var hometeamurl = "teamstatistics.html?" + row.hometeamname
-        tr += "  <td>" + "<a href = "+ hometeamurl+ ">"+ row.hometeam + "</a>" + "</td>";
-        tr += "  <td>" + row.homescore + "</td>";
+        tr += "  <td>" + item.matchnumber + "</td>";
+        var hometeamurl = "teamstatistics.html?" + item.hometeamname
+        tr += "  <td>" + "<a href = "+ hometeamurl+ ">"+ item.hometeam + "</a>" + "</td>";
+        tr += "  <td>" + item.homescore + "</td>";
         tr += "  <td>" + ":" + "</td>";
-        tr += "  <td>" + row.awayscore + "</td>";
-        var awayteamurl = "teamstatistics.html?" + row.awayteamname 
-        tr += "  <td>" + "<a href = "+ awayteamurl+ ">"+ row.awayteam + "</a>" + "</td>";
-        tr += "  <td>" + row.matchdate  + "</td>";
-        var url = "statistics.html?" + row.matchnumber + "/" + "soccer";
+        tr += "  <td>" + item.awayscore + "</td>";
+        var awayteamurl = "teamstatistics.html?" + item.awayteamname 
+        tr += "  <td>" + "<a href = "+ awayteamurl+ ">"+ item.awayteam + "</a>" + "</td>";
+        tr += "  <td>" + item.matchdate  + "</td>";
+        var url = "statistics.html?" + item.matchnumber + "/" + "soccer";
         tr += "  <td>" + "<a href =" + url + ">" +  "통계" + "</a>"  + "</td>";
         var matchdone = "";
         if(row.homeshoot > 0) {
@@ -54,32 +44,17 @@
         }
         tr += "  <td>" + matchdone + "</td>";
         tr += "</tr>";
-        return tr;
-      }
+		      trList+=tr;
+		      document.querySelector("#" + "table" + " tbody").innerHTML = trList;
+	      });
+	      
+	    });
+	});
+    </script>
 
-      function renderTable(id, dataList) {
-        
-        var size = dataList.length;
-        var trList = "";
-        for (var i = 0; i < size; i++) {
-          trList += toDOM(dataList[i], i);
-        }
-        document.querySelector("#" + id + " tbody").innerHTML = trList;
-      }
+</head>
+<body>
 
-      window.onload = function () {
-        renderTable("table", matchload());
-      };
-            function matchload() {
-                var mydata = JSON.parse(data);
-                return mydata;
-            }
-        </script>                     
+<div id="target"></div>
 
-  <body>
-        <div id="data">
-
-        </div>
-    </body>                   
-
-</html>
+</body>
