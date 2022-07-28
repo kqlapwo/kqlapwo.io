@@ -20,12 +20,12 @@
         var clickedteam = clickeddata[0];
 	    
    $(document).ready(function() {
-	   alert("씨발")
 	    $.getJSON('teamlist.json', function(data) {
-		    alert("HI")
 	     var trList = "";
       var nowteamname = "";
 	      $.each(data, function(i, item) {
+		      alert(i)
+		    alert(item)
 		      	var tr = "";
      if(i > 0) {
  if(nowteamname == clickedteam){
