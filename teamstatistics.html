@@ -26,9 +26,10 @@
       var nowteamname = "";
 	      $.each(data, function(i, item) {
 		      var count = 0;
+		      count = Intparse(count);
 		      $.each(item, function(j, fitem) {
 		      	var tr = "";
-			      alert(j)
+			      alert(count)
      if(count > 0) {
  if(nowteamname == clickedteam){
 	 alert("HI")
@@ -44,7 +45,7 @@
  }
  else {nowteamname = fitem;
 	nowteamname= String( nowteamname )}
-			      count += 1; });
+			      count = count + 1; });
 	      });
 	      
 	    });
