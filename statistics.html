@@ -17,30 +17,31 @@
 	
 	$(document).ready(function() {
 		
+	    $.getJSON('matchdata.json', function(data) {
+		    
     temp = location.href.split("?");
 clickeddata=temp[1].split("/");
 clicked = clickeddata[0];
 matchsports = clickeddata[1];
 clicked = parseInt(clicked);
-	    $.getJSON('matchdata.json', function(data) {
 	     var trList = "";
 	      
-	    var  item = data[clicked-1]
+	    var  itemd = data[0]
         
         var tr = "";
         tr += "<tr>";
-        tr += "  <td>" + item.matchnumber + "</td>";
-        tr += "  <td>" + item.hometeam + "</td>";
-        tr += "  <td>" + item.homescore + "</td>";
+        tr += "  <td>" + itemd.matchnumber + "</td>";
+        tr += "  <td>" + itemd.hometeam + "</td>";
+        tr += "  <td>" + itemd.homescore + "</td>";
         tr += "  <td>" + ":" + "</td>";
-        tr += "  <td>" + item.awayscore + "</td>";
-        tr += "  <td>" + item.awayteam + "</td>";   
+        tr += "  <td>" + itemd.awayscore + "</td>";
+        tr += "  <td>" + itemd.awayteam + "</td>";   
         tr += "</tr>"
         
-        homeshoot = item.homeshoot;
-            awayshoot = item.awayshoot;
-            homeotshoot = item.homeotshoot;
-            awayotshoot = item.awayotshoot;
+        homeshoot = itemd.homeshoot;
+            awayshoot = itemd.awayshoot;
+            homeotshoot = itemd.homeotshoot;
+            awayotshoot = itemd.awayotshoot;
         if(row.homeshoot > 0) {
         } 
         else{
