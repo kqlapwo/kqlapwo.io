@@ -21,13 +21,11 @@
 	    
    $(document).ready(function() {
 	   alert("씨발")
-	    $.getJSON('matchdata.json', function(data) {
+	    $.getJSON('teamlist.json', function(data) {
 		    alert("HI")
 	     var trList = "";
       var nowteamname = "";
 	      $.each(data, function(i, item) {
-		      alert("HI3")
-		      alert(i)
 		      	var tr = "";
      if(i > 0) {
  if(nowteamname == clickedteam){
