@@ -4,7 +4,7 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
   <meta charset = "utf-8">
   <title>Statistics</title>
-  <button onclick = 'location.href = "soccermain.html"'>축구 일정/결과</button>
+  <button onclick = 'location.href = "Untitled-1.html"'>축구 일정/결과</button>
    </head>
   <script language = "javascript">
     
@@ -27,18 +27,21 @@
     </table>
    <script type="text/javascript" src="matchdata.json"></script>
         <script type="text/javascript" >
-
-function load() {
-                var mydata = JSON.parse(data);
-                return mydata;
-            }
 temp = location.href.split("?");
 clickeddata=temp[1].split("/");
 clicked = clickeddata[0];
 matchsports = clickeddata[1];
 clicked = parseInt(clicked);
-//alert(clicked + " " + matchsports);
-             function toDOM(row, number) {
+        </script>                     
+
+<script>
+	$(document).ready(function() {
+		
+	    $.getJSON('matchdata.json', function(data) {
+	     var trList = "";
+	      
+	    var  item = data[clicked-1]
+        
         var tr = "";
         tr += "<tr>";
         tr += "  <td>" + row.matchnumber + "</td>";
@@ -48,10 +51,6 @@ clicked = parseInt(clicked);
         tr += "  <td>" + row.awayscore + "</td>";
         tr += "  <td>" + row.awayteam + "</td>";   
         tr += "</tr>"
-        return tr;
-      }
-      function statisticstoDOM(row, number, trList) {
-        var tr = "";
         
         homeshoot = row.homeshoot;
             awayshoot = row.awayshoot;
@@ -85,27 +84,12 @@ clicked = parseInt(clicked);
         tr += "  <td>" + awayotshoot + "</td>";
         tr += "  <td>"  + "</td>";
         tr += "</tr>";
-        trList += tr;
-        return trList;
-      }
-
-      function renderTable(id, dataList, number) {
-        
-        var size = dataList.length;
-        var trList = "";
-        var statisticstrList = "";
-          trList += toDOM(dataList[number], number);
-          trList += statisticstoDOM(dataList[number], number, statisticstrList);
-        
+        trList = tr;
         document.querySelector("#" + id + " tbody").innerHTML = trList;
-      }
-
-      window.onload = function () {
-        renderTable("table", load(), clicked-1);
-      };
-        </script>                     
-
-
+      });
+	      
+	    });
+    </script>
   <body>
         <div id="data">
 
