@@ -2,17 +2,28 @@
 <script>
 	$(document).ready(function() {
 		
-	    $.getJSON('people.json', function(data) {
+	    $.getJSON('matchdata.json', function(data) {
 	     
 	      var html = [];
 	      
 	      $.each(data, function(i, item) {
 	    	  html.push('<div >');
-	    	  html.push('<h3 >' + item.firstName + '</h3>');
-	    	  html.push('<div >' + item.lastName + '</div>');
-	    	  html.push('<div >' + item.age + '</div>');
-	    	  html.push('<div >' + item.address.streetAddress + '</div>');
-	    	  html.push('<div >' + item.phoneNumber[0].type + '</div>');
+	    	  html.push('<h3 >' + item.hometeam + '</h3>');
+	    	  html.push('<div >' + item.awayteam + '</div>');
+	    	  html.push('<div >' + item.homescore + '</div>');
+	    	  html.push('<div >' + item.awayscore + '</div>');
+		      var endgame = "종료";
+		      if(row.homeshoot > 0) {
+			      
+        } 
+        else{
+		endgame  = "경기 전";
+            homeshoot = 0;
+            awayshoot = 0;
+            homeotshoot = 0;
+            awayotshoot = 0;
+        }
+	    	  html.push('<div >' + endgame + '</div>');
 	    	  html.push('</div>');
 	    	  html.push('</div>');
 	    	  
