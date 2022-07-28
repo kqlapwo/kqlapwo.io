@@ -24,22 +24,22 @@
 	     var trList = "";
       var nowteamname = "";
 	      $.each(data, function(i, item) {
-		      alert(i)
-		    alert(item)
+		      $.each(item, function(j, fitem) {
 		      	var tr = "";
      if(i > 0) {
  if(nowteamname == clickedteam){
         tr += "<tr>";
-        tr += "  <td>" + item.name + "</td>";
-        tr += "  <td>" + item.score + "</td>";
-     tr += "  <td>" + item.assist + "</td>";
+        tr += "  <td>" + fitem.name + "</td>";
+        tr += "  <td>" + fitem.score + "</td>";
+     tr += "  <td>" + fitem.assist + "</td>";
         tr += "</tr>";
 		      trList+=tr;
 		      document.querySelector("#" + "table" + " tbody").innerHTML = trList;
  }
  }
- else {nowteamname = item;
+ else if(i < 1) {nowteamname = fitem;
 	alert(nowteamname);}
+			      });
 	      });
 	      
 	    });
