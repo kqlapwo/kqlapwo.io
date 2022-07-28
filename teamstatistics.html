@@ -14,40 +14,30 @@
         
     var scriptsrc = clickedteam+".json"
     </script>
-   <script>
-    var script = document.createElement('script');
-    script.src = clickedteam+".json";
-    document.getElementsByTagName('script')[0].parentNode.appendChild(script);
-    </script>  
-        <script type="text/javascript" id="script" >
-             function toDOM(row) {
-        var tr = "";
+   $(document).ready(function() {
+		
+	    $.getJSON('matchdata.json', function(data) {
+	     var trList = "";
+      var nowteamname = "";
+	      $.each(data, function(i, item) {
+		      	var tr = "";
+     if(i > 0) {
+ if(nowteamname == clickedteam){
         tr += "<tr>";
-        tr += "  <td>" + row.name + "</td>";
-        tr += "  <td>" + row.goal + "</td>";
-        tr += "  <td>" + row.assist + "</td>";
-        tr += "</tr>"
-        return tr;
-      }
-
-      function renderTable(id, dataList) {
-        
-        var size = dataList.length;
-        var trList = "";
-        for (var i = 0; i < size; i++) {
-          trList += toDOM(dataList[i], i);
-        }
-        document.querySelector("#" + id + " tbody").innerHTML = trList;
-      }
-
-      window.onload = function () {
-        renderTable("table", teamload());
-      };
-            function teamload() {
-                var mydata = JSON.parse(data);
-                return mydata;
-            }
-        </script>                     
+        tr += "  <td>" + item.name + "</td>";
+        tr += "  <td>" + item.score + "</td>";
+     tr += "  <td>" + item.assist + "</td>";
+        tr += "</tr>";
+		      trList+=tr;
+		      document.querySelector("#" + "table" + " tbody").innerHTML = trList;
+ }
+ }
+ else {nowteamname = item;}
+	      });
+	      
+	    });
+	});
+    </script>
 
   <body>
     <!-- HTML -->
@@ -61,7 +51,7 @@
       </thead>
       <tbody></tbody>
     </table>
-        <div id="data">
+        <div id="target">
 
         </div>
     </body>                   
