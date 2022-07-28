@@ -26,7 +26,7 @@
 	      $.each(data, function(i, item) {
 		      $.each(item, function(j, fitem) {
 		      	var tr = "";
-     if(i > 0) {
+     if(j > 0) {
  if(nowteamname == clickedteam){
         tr += "<tr>";
         tr += "  <td>" + fitem.name + "</td>";
@@ -37,7 +37,7 @@
 		      document.querySelector("#" + "table" + " tbody").innerHTML = trList;
  }
  }
- else if(i < 1) {nowteamname = fitem;
+ else if(j < 1) {nowteamname = fitem;
 	alert(nowteamname);}
 			      });
 	      });
