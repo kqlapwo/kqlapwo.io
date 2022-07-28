@@ -1,3 +1,3 @@
-[["teamname" : "tottenham","손흥민": { "name" : "손흥민", "goal" : "1","assist":"1"}, "해리케인" : {"name" : "해리케인", "goal" : "1","assist":"1"}], 
- ["teamname" : "liverpool", "살라" :  { "name" : "살라", "goal" : "0","assist":"0"}, "누녜스" : {"name" : "누녜스", "goal" : "0","assist":"0"}]
+[{"teamname" : "tottenham","손흥민": { "name" : "손흥민", "goal" : "1","assist":"1"}, "해리케인" : {"name" : "해리케인", "goal" : "1","assist":"1"}}, 
+ {"teamname" : "liverpool", "살라" :  { "name" : "살라", "goal" : "0","assist":"0"}, "누녜스" : {"name" : "누녜스", "goal" : "0","assist":"0"}}
 ]
