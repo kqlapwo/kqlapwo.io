@@ -1,5 +1,5 @@
 
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
  
  
   <button onclick = 'location.href = "soccermain.html"'>축구 일정/결과</button>
@@ -18,7 +18,7 @@
         var temp = location.href.split("?");
         var clickeddata=temp[1].split("/");
         var clickedteam = clickeddata[0];
-        alert(clickedteam)
+	    
    $(document).ready(function() {
 		 alert("HI3")
 	    $.getJSON('teamlist.json', function(data) {
