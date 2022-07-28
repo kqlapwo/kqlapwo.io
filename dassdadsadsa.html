@@ -45,13 +45,13 @@
 <script>
 	$(document).ready(function() {
 		
+		      alert("HI");
 	    $.getJSON('matchdata.json', function(data) {
 	     
 	      var html = [];
 	      
 	      $.each(data, function(i, item) {
 	    	  renderTable("table", data);
-		      alert("HI");
 	      });
 	      
 	    });
