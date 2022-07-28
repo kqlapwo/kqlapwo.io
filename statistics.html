@@ -36,7 +36,7 @@ clicked = parseInt(clicked);
         tr += "  <td>" + ":" + "</td>";
         tr += "  <td>" + itemd.awayscore + "</td>";
         tr += "  <td>" + itemd.awayteam + "</td>";   
-        
+       	tr += "</tr>";
         
         homeshoot = itemd.homeshoot;
             awayshoot = itemd.awayshoot;
@@ -51,6 +51,7 @@ clicked = parseInt(clicked);
             homeotshoot = 0;
             awayotshoot = 0;
         }
+	tr += "<tr>";
         tr += "  <td>" +"슈팅"+ "</td>";
         tr += "  <td>"  + "</td>";
         tr += "  <td>" + homeshoot + "</td>";
