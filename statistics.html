@@ -13,14 +13,13 @@
       </thead>
       
     </table>
-    <script>
+<script>
+	
     temp = location.href.split("?");
 clickeddata=temp[1].split("/");
 clicked = clickeddata[0];
 matchsports = clickeddata[1];
 clicked = parseInt(clicked);
-		alert(clicked)</script>
-<script>
 	$(document).ready(function() {
 		
 	    $.getJSON('matchdata.json', function(data) {
