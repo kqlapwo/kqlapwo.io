@@ -1,22 +1,26 @@
-{
-    "person": [
-        {
-            "firstName": "Clark",
-            "lastName": "Kent",
-            "job": "Reporter",
-            "roll": 20
-        },
-        {
-            "firstName": "Bruce",
-            "lastName": "Wayne",
-            "job": "Playboy",
-            "roll": 30
-        },
-        {
-            "firstName": "Peter",
-            "lastName": "Parker",
-            "job": "Photographer",
-            "roll": 40
-        }
-    ]
- }
+[
+	{
+	     "firstName": "John",
+	     "lastName": "Smith",
+	     "age": 25,
+	     "address":
+	     {
+	         "streetAddress": "21 2nd Street",
+	         "city": "New York",
+	         "state": "NY",
+	         "postalCode": "10021"
+	     },
+	     "phoneNumber":
+	     [
+	         {
+	           "type": "home",
+	           "number": "212 555-1234"
+	         },
+	         {
+	           "type": "fax",
+	           "number": "646 555-4567"
+	         }
+	     ]
+	 }
+ ]
+출처: https://mkil.tistory.com/357 [나비와꽃기린:티스토리]
