@@ -27,8 +27,6 @@ clicked = parseInt(clicked);
 		    
 	    var  itemd = data[clicked - 1]
 	     var trList = "";
-	      alert(itemd.matchnumber)
-		    alert("HI5")
         
         var tr = "";
         tr += "<tr>";
@@ -38,7 +36,7 @@ clicked = parseInt(clicked);
         tr += "  <td>" + ":" + "</td>";
         tr += "  <td>" + itemd.awayscore + "</td>";
         tr += "  <td>" + itemd.awayteam + "</td>";   
-        tr += "</tr>"
+        
         
         homeshoot = itemd.homeshoot;
             awayshoot = itemd.awayshoot;
@@ -53,7 +51,6 @@ clicked = parseInt(clicked);
             homeotshoot = 0;
             awayotshoot = 0;
         }
-        tr += "<tr>";
         tr += "  <td>" +"슈팅"+ "</td>";
         tr += "  <td>"  + "</td>";
         tr += "  <td>" + homeshoot + "</td>";
