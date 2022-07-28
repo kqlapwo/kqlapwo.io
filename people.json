@@ -21,5 +21,28 @@
 	           "number": "646 555-4567"
 	         }
 	     ]
+	 },
+	{
+	     "firstName": "Kai",
+	     "lastName": "Lee",
+	     "age": 17,
+	     "address":
+	     {
+	         "streetAddress": "33 4th Street",
+	         "city": "Yantai
+	         "state": "Shandong
+	         "postalCode": "13213"
+	     },
+	     "phoneNumber":
+	     [
+	         {
+	           "type": "home",
+	           "number": "212 555-1234"
+	         },
+	         {
+	           "type": "fax",
+	           "number": "646 555-4567"
+	         }
+	     ]
 	 }
  ]
