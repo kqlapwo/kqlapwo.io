@@ -18,6 +18,7 @@
         var temp = location.href.split("?");
         var clickeddata=temp[1].split("/");
         var clickedteam = clickeddata[0];
+	  clickedteam =   String( clickedteam )
 	    
    $(document).ready(function() {
 	    $.getJSON('teamlist.json', function(data) {
@@ -41,7 +42,7 @@
  }
  }
  else {nowteamname = fitem;
-	;}
+	nowteamname= String( nowteamname )}
 			      });
 	      });
 	      
