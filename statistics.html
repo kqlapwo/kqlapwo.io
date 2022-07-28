@@ -44,18 +44,18 @@ clicked = parseInt(clicked);
         
         var tr = "";
         tr += "<tr>";
-        tr += "  <td>" + row.matchnumber + "</td>";
-        tr += "  <td>" + row.hometeam + "</td>";
-        tr += "  <td>" + row.homescore + "</td>";
+        tr += "  <td>" + item.matchnumber + "</td>";
+        tr += "  <td>" + item.hometeam + "</td>";
+        tr += "  <td>" + item.homescore + "</td>";
         tr += "  <td>" + ":" + "</td>";
-        tr += "  <td>" + row.awayscore + "</td>";
-        tr += "  <td>" + row.awayteam + "</td>";   
+        tr += "  <td>" + item.awayscore + "</td>";
+        tr += "  <td>" + item.awayteam + "</td>";   
         tr += "</tr>"
         
-        homeshoot = row.homeshoot;
-            awayshoot = row.awayshoot;
-            homeotshoot = row.homeotshoot;
-            awayotshoot = row.awayotshoot;
+        homeshoot = item.homeshoot;
+            awayshoot = item.awayshoot;
+            homeotshoot = item.homeotshoot;
+            awayotshoot = item.awayotshoot;
         if(row.homeshoot > 0) {
         } 
         else{
