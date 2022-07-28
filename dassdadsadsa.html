@@ -3,24 +3,27 @@
 	$(document).ready(function() {
 		
 	    $.getJSON('matchdata.json', function(data) {
-	     
+	     var trList = "";
 	      var html = [];
 	      
 	      $.each(data, function(i, item) {
-	    	  html.push('<div >');
-	    	  html.push('<h3 >' + item.hometeam + '</h3>');
-	    	  html.push('<div >' + item.awayteam + '</div>');
-	    	  html.push('<div >' + item.homescore + '</div>');
-	    	  html.push('<div >' + item.awayscore + '</div>');
-	    	  html.push('</div>');
-	    	  html.push('</div>');
-	    	  
-	    	  //html.push('<li id="' + key + '">' + val + '</li>');
+		      	var tr = "";
+        tr += "<tr>";
+        tr += "  <td>" + item.matchnumber + "</td>";
+        var hometeamurl = "teamstatistics.html?" + item.hometeamname
+        tr += "  <td>" + "<a href = "+ hometeamurl+ ">"+ item.hometeam + "</a>" + "</td>";
+        tr += "  <td>" + item.homescore + "</td>";
+        tr += "  <td>" + ":" + "</td>";
+        tr += "  <td>" + item.awayscore + "</td>";
+        var awayteamurl = "teamstatistics.html?" + item.awayteamname 
+        tr += "  <td>" + "<a href = "+ awayteamurl+ ">"+ item.awayteam + "</a>" + "</td>";
+        tr += "  <td>" + item.matchdate  + "</td>";
+        var url = "statistics.html?" + item.matchnumber + "/" + "soccer";
+        tr += "  <td>" + "<a href =" + url + ">" +  "통계" + "</a>"  + "</td>";
+        tr += "</tr>";
+		      trList+=tr;
+		      document.querySelector("#" + id + " tbody").innerHTML = trList;
 	      });
-	      
-	      console.log(html);
-	      
-	      $('#target').html(html.join(''));
 	      
 	    });
 	});
