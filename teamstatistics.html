@@ -24,8 +24,9 @@
 	    $.getJSON('teamlist.json', function(data) {
 	     var trList = "";
       var nowteamname = "";
+		     var count = 0;
 	      $.each(data, function(i, item) {
-		      var count = 0;
+		     
 		      count = parseInt(count);
 		      $.each(item, function(j, fitem) {
 		      	var tr = "";
@@ -34,8 +35,8 @@
  if(nowteamname == clickedteam){
 	 alert("HI")
         tr += "<tr>";
+        tr += "  <td>" + fitem.name + "</td>";
         tr += "  <td>" + fitem.goal + "</td>";
-        tr += "  <td>" + fitem.score + "</td>";
      tr += "  <td>" + fitem.assist + "</td>";
         tr += "</tr>";
 		      trList+=tr;
