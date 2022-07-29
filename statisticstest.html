@@ -1,0 +1,88 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<button onclick = 'location.href = "soccermain.html"'>축구 일정/결과</button>
+<style>
+	th, td {
+  text-align: center;
+}
+</style>
+<table id="table" class="table">
+      <thead>
+        <tr>
+            <td>번호</td>
+            <td>홈팀</td>
+            <td></td>
+            <td>:</td>
+            <td></td>
+            <td>원정팀</td>
+          </tr>
+      </thead>
+	<tbody></tbody>
+    </table>
+<script>
+	
+	$(document).ready(function() {
+		
+	    $.getJSON('matchdata.json', function(data) {
+		    
+    temp = location.href.split("?");
+clickeddata=temp[1].split("/");
+clicked = clickeddata[0];
+matchsports = clickeddata[1];
+clicked = parseInt(clicked);
+		    
+	    var  itemd = data[clicked - 1]
+	     var trList = "";
+        
+        var tr = "";
+        tr += "<tr>";
+        tr += "  <td>" + itemd.matchnumber + "</td>";
+        tr += "  <td>" + itemd.hometeam + "</td>";
+        tr += "  <td>" + itemd.homescore + "</td>";
+        tr += "  <td>" + ":" + "</td>";
+        tr += "  <td>" + itemd.awayscore + "</td>";
+        tr += "  <td>" + itemd.awayteam + "</td>";   
+       	tr += "</tr>";
+        
+        homeshoot = itemd.homeshoot;
+            awayshoot = itemd.awayshoot;
+            homeotshoot = itemd.homeotshoot;
+            awayotshoot = itemd.awayotshoot;
+        if(itemd.homeshoot > 0) {
+        } 
+        else{
+
+            homeshoot = 0;
+            awayshoot = 0;
+            homeotshoot = 0;
+            awayotshoot = 0;
+        }
+	tr += "<tr>";
+        tr += "  <td>" +"슈팅"+ "</td>";
+        tr += "  <td>"  + "</td>";
+        tr += "  <td>" + homeshoot + "</td>";
+        
+        tr += "  <td>" + ":" + "</td>";
+        tr += "  <td>" + awayshoot + "</td>";
+        tr += "  <td>"  + "</td>";
+        tr += "</tr>";
+        tr += "<tr>";
+        tr += "  <td>" +"유효슈팅"+ "</td>";
+        tr += "  <td>"  + "</td>";
+        tr += "  <td>" + homeotshoot + "</td>";
+        tr += "  <td>" + ":" + "</td>";
+        tr += "  <td>" + awayotshoot + "</td>";
+        tr += "  <td>"  + "</td>";
+        tr += "</tr>";
+        trList += tr;
+        document.querySelector("#" + "table" + " tbody").innerHTML = trList;
+	      
+	    });
+	});
+    </script>
+
+
+<body>
+
+<div id="target"></div>
+
+</body>
