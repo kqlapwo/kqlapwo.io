@@ -19,25 +19,24 @@
    $(document).ready(function() {
 	   alert("ready")
 	    $.getJSON('teamlist.json', function(data) {
-		    alert("getjson")
+		    
 	     var ttList = "";
 		     var nowtteamname = "";
 	      $.each(data, function(b, bitem) {
-     alert("each")
+    
 		      nowtteamname = bitem.teamname;
 			      
 		      	var tt = "";
  if(nowtteamname == clickedteam){
-alert("tr")
-        tr += "<tr>";
-        tr += "  <td>" + bitem.krteamname + "</td>";
-	 tr += "  <td>" + "</td>";
-        tr += "  <td>" + bitem.win+ "승" + "</td>";
-	  tr += "  <td>" + bitem.draw+ "무" + "</td>";
-	  tr += "  <td>" + bitem.loss+ "패" + "</td>";
-        tr += "</tr>";
-		      trList+=tr;
-		      document.querySelector("#" + "table" + " tbody").innerHTML = trList; }
+        tt += "<tr>";
+        tt += "  <td>" + bitem.krteamname + "</td>";
+	 tt += "  <td>" + "</td>";
+        tt += "  <td>" + bitem.win+ "승" + "</td>";
+	  tt += "  <td>" + bitem.draw+ "무" + "</td>";
+	  tt += "  <td>" + bitem.loss+ "패" + "</td>";
+        tt += "</tr>";
+		      ttList+=tt;
+		      document.querySelector("#" + "table" + " tbody").innerHTML = ttList; }
 		     
 	      });
 	      
