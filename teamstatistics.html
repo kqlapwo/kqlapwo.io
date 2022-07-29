@@ -45,17 +45,10 @@
 	  tt += "  <td>" + bitem.draw+ "무" + "</td>";
 	  tt += "  <td>" + bitem.loss+ "패" + "</td>";
         tt += "</tr>";
-		      trList+=tt;
+		      ttList+=tt;
+	 document.querySelector("#" + "gtable" + " tbody").innerHTML = ttList;
 	 
-	var grList = "";
-	 var gr = "";
-	  gr += "<tr>";
-        gr += "  <td>" + "선수" + "</td>";
-        gr += "  <td>" + "득점" + "</td>";
-     gr += "  <td>" + "어시스트" + "</td>";
-        gr += "</tr>";
-		      grList+=gr;
-	  document.querySelector("#" + "gtable" + " tbody").innerHTML = grList;
+	
 		       }
 		     
 	      });
@@ -68,6 +61,15 @@
 	 
 	 
 	  $(document).ready(function() {
+		  var grList = "";
+	 var gr = "";
+	  gr += "<tr>";
+        gr += "  <td>" + "선수" + "</td>";
+        gr += "  <td>" + "득점" + "</td>";
+     gr += "  <td>" + "어시스트" + "</td>";
+        gr += "</tr>";
+		      trList+=gr;
+	 
 	    $.getJSON('teamlist.json', function(data) {
       var nowteamname = "";
 		     var count = 0;
