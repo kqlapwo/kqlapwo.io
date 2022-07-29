@@ -3,7 +3,7 @@
  
  
   <button onclick = 'location.href = "soccermain.html"'>축구 일정/결과</button>
-<table id="table" class="table">
+ <table id="table" class="table">
       <thead>
         <tr>
         </tr>
@@ -43,21 +43,20 @@
 	      
 	    });
 	});
-    </script>
- <table id="table" class="table">
-      <thead>
-        <tr>
-            <td>선수</td>
-            <td>득점</td>
-            <td>어시스트</td>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-    <script>
-	    
-   $(document).ready(function() {
+	 
+	var grList = "";
+	 var gr = "";
+	  gr += "<tr>";
+        gr += "  <td>" + "선수" + "</td>";
+        gr += "  <td>" + "득점" + "</td>";
+     gr += "  <td>" + "어시스트" + "</td>";
+        gr += "</tr>";
+		      grList+=gr;
+		      document.querySelector("#" + "table" + " tbody").innerHTML = grList;
+	 
+	 
+	 
+	  $(document).ready(function() {
 	   alert("ready")
 	    $.getJSON('teamlist.json', function(data) {
 	     var trList = "";
@@ -91,6 +90,12 @@
 	      
 	    });
 	});
+    </script>
+
+
+    <script>
+	    
+  
     </script>
 
   <body>
