@@ -11,6 +11,8 @@
       <tbody></tbody>
     </table>
  <script>
+	 
+	     var trList = "";
         var temp = location.href.split("?");
         var clickeddata=temp[1].split("/");
         var clickedteam = clickeddata[0];
@@ -36,8 +38,8 @@
 	  tt += "  <td>" + bitem.draw+ "무" + "</td>";
 	  tt += "  <td>" + bitem.loss+ "패" + "</td>";
         tt += "</tr>";
-		      ttList+=tt;
-		      document.querySelector("#" + "table" + " tbody").innerHTML = ttList; }
+		      trList+=tt;
+		       }
 		     
 	      });
 	      
@@ -51,15 +53,14 @@
         gr += "  <td>" + "득점" + "</td>";
      gr += "  <td>" + "어시스트" + "</td>";
         gr += "</tr>";
-		      grList+=gr;
-		      document.querySelector("#" + "table" + " tbody").innerHTML = grList;
+		      trList+=gr;
+		      
 	 
 	 
 	 
 	  $(document).ready(function() {
 	   alert("ready")
 	    $.getJSON('teamlist.json', function(data) {
-	     var trList = "";
       var nowteamname = "";
 		     var count = 0;
 		    
