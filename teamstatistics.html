@@ -57,18 +57,18 @@
 
     <script>
 	    
-   $(document).ready(rfunction() {
+   $(document).ready(function() {
 	   alert("ready")
-	    $.getJSON('teamlist.json', gfunction(data) {
+	    $.getJSON('teamlist.json', function(data) {
 	     var trList = "";
       var nowteamname = "";
 		     var count = 0;
 		    
 		      count = parseInt(count);
-	      $.each(data, efunction(i, item) {
+	      $.each(data, function(i, item) {
 		      nowteamname = item.teamname;
 		      count = 0;
-		      $.each(item, eafunction(j, fitem) {
+		      $.each(item, function(j, fitem) {
 			      
 		      	var tr = "";
      if(count > 4) {
