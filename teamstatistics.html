@@ -3,6 +3,13 @@
  
  
   <button onclick = 'location.href = "soccermain.html"'>축구 일정/결과</button>
+ <table id="gtable" class="gtable">
+      <thead>
+        <tr>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
  <table id="table" class="table">
       <thead>
         <tr>
@@ -47,7 +54,8 @@
         gr += "  <td>" + "득점" + "</td>";
      gr += "  <td>" + "어시스트" + "</td>";
         gr += "</tr>";
-		      trList+=gr;
+		      grList+=gr;
+	  document.querySelector("#" + "gtable" + " tbody").innerHTML = grList;
 		       }
 		     
 	      });
