@@ -22,11 +22,12 @@
 		    
 	     var ttList = "";
 		     var nowtteamname = "";
+		    	var tt = "";
 	      $.each(data, function(b, bitem) {
     
 		      nowtteamname = bitem.teamname;
 			      
-		      	var tt = "";
+		      
  if(nowtteamname == clickedteam){
         tt += "<tr>";
         tt += "  <td>" + bitem.krteamname + "</td>";
