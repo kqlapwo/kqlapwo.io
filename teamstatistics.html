@@ -3,6 +3,38 @@
  
  
   <button onclick = 'location.href = "soccermain.html"'>축구 일정/결과</button>
+ <script>
+        var temp = location.href.split("?");
+        var clickeddata=temp[1].split("/");
+        var clickedteam = clickeddata[0];
+	  clickedteam =   String( clickedteam )
+	    
+   $(document).ready(function() {
+	    $.getJSON('teamlist.json', function(data) {
+	     var ttList = "";
+		     var nowtteamname = "";
+	      $.each(data, function(b, bitem) {
+     
+		      nowtteamname = bitem.teamname;
+			      
+		      	var tt = "";
+ if(nowtteamname == clickedteam){
+
+        tr += "<tr>";
+        tr += "  <td>" + bitem.krteamname + "</td>";
+	 tr += "  <td>" + "</td>";
+        tr += "  <td>" + bitem.win+ "승" + "</td>";
+	  tr += "  <td>" + bitem.draw+ "무" + "</td>";
+	  tr += "  <td>" + bitem.loss+ "패" + "</td>";
+        tr += "</tr>";
+		      trList+=tr;
+		      document.querySelector("#" + "table" + " tbody").innerHTML = trList; }
+		     
+	      });
+	      
+	    });
+	});
+    </script>
  <table id="table" class="table">
       <thead>
         <tr>
@@ -15,10 +47,6 @@
     </table>
 
     <script>
-        var temp = location.href.split("?");
-        var clickeddata=temp[1].split("/");
-        var clickedteam = clickeddata[0];
-	  clickedteam =   String( clickedteam )
 	    
    $(document).ready(function() {
 	    $.getJSON('teamlist.json', function(data) {
@@ -28,12 +56,12 @@
 		    
 		      count = parseInt(count);
 	      $.each(data, function(i, item) {
-		     nowteamname = "";
+		      nowteamname = item.teamname;
 		      count = 0;
 		      $.each(item, function(j, fitem) {
 			      
 		      	var tr = "";
-     if(count > 0) {
+     if(count > 4) {
  if(nowteamname == clickedteam){
 
         tr += "<tr>";
@@ -46,8 +74,7 @@
 	 
  }
  }
- else {nowteamname = fitem;
-	nowteamname= String( nowteamname ); 
+ else {
        count = count + 1;}
 			       });
 	      });
