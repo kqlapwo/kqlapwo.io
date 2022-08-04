@@ -105,11 +105,11 @@
 			        var ts = "";
 		if(parseInt(oitem.standing) == parseInt(j)) {
         ts += "<tr>";
-        ts += "  <td>" + oitem.standing + "</td>";
+        ts += "  <td>" + parseInt(oitem.standing) + "</td>";
 	 ts += "  <td>" + oitem.krteamname + "</td>";
-	numberofmatch = oitem.win + oitem.draw + oitem.loss;
+	numberofmatch = parseInt(oitem.win) + parseInt(oitem.draw) + parseInt(oitem.loss);
 	ts += "  <td>" + onumberofmatch + "</td>";
-	winpoint = oitem.win * 3 + oitem.draw;
+	winpoint = parseInt(oitem.win) * 3 + parseInt(oitem.draw);
 	ts += "  <td>" + winpoint + "</td>";
 	ts += "  <td>" + oitem.win + "</td>";
 	ts += "  <td>" + oitem.draw + "</td>";
