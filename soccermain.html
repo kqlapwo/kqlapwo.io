@@ -101,7 +101,8 @@
 	$(document).ready(function() {
 	    $.getJSON('teamlist.json', function(ldata) {
 	     var tsList = "";
-		    for(var j = 1; j <ldata.length + 1;j++){
+		    var rlength = ldata.length + 1;
+		    for(var j = 1; j < rlength ;j++){
 		      $.each(ldata, function(oi, oitem) {
 			        var ts = "";
 		k = j;
