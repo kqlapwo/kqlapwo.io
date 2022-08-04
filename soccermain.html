@@ -102,31 +102,25 @@
 	    $.getJSON('teamlist.json', function(ldata) {
 	     var tsList = "";
 		    var rlength = ldata.length + 1;
-		    alert(rlength)
 		    for(var j = 1; j < rlength ;j++){
 			    
 		      $.each(ldata, function(oi, oitem) {
 			        var ts = "";
 		k = j;
-		alert(typeof oitem.standing);
-		alert(typeof k);
 		if(oitem.standing == String(k)) {
-		alert(k)
-			alert(oitem.krteamname)
       			  ts += "<tr>";
         ts += "  <td>" + oitem.standing + "</td>";
 	 ts += "  <td>" + oitem.krteamname + "</td>";
 	numberofmatch = oitem.win + oitem.draw + oitem.loss;
 	ts += "  <td>" + numberofmatch + "</td>";
 	winpoint = oitem.win * 3 + oitem.draw;
-	ts += "  <td>" + winpoint + "</td>";
+	ts += "  <td  style='text-align:center' >" + winpoint + "</td>";
 	ts += "  <td>" + oitem.win + "</td>";
 	ts += "  <td>" + oitem.draw + "</td>";
 	 ts += "  <td>" + oitem.loss + "</td>";
         ts += "</tr>";
 		      tsList+=ts;
 		      document.querySelector("#" + "teamstanding" + " tbody").innerHTML = tsList;
-			alert(typeof j)
 		}
 			    
 	      });
