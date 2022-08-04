@@ -103,20 +103,8 @@
 		    for(var j = 1; j <ldata.length + 1;j++){
 		      $.each(ldata, function(oi, oitem) {
 			        var ts = "";
-		if(parseInt(oitem.standing) == parseInt(j)) {
-        ts += "<tr>";
-        ts += "  <td>" + parseInt(oitem.standing) + "</td>";
-	 ts += "  <td>" + oitem.krteamname + "</td>";
-	numberofmatch = parseInt(oitem.win) + parseInt(oitem.draw) + parseInt(oitem.loss);
-	ts += "  <td>" + onumberofmatch + "</td>";
-	winpoint = parseInt(oitem.win) * 3 + parseInt(oitem.draw);
-	ts += "  <td>" + winpoint + "</td>";
-	ts += "  <td>" + oitem.win + "</td>";
-	ts += "  <td>" + oitem.draw + "</td>";
-	 ts += "  <td>" + oitem.loss + "</td>";
-        ts += "</tr>";
-		      tsList+=ts;
-		      document.querySelector("#" + "teamstanding" + " tbody").innerHTML = tsList;
+		if(oitem.standing == String(j)) {
+      			alert("HI");
 		}
 			    
 	      });
