@@ -97,13 +97,15 @@
 	});
 	var numberofmatch = 0;
 	var winpoint = 0;
+	var k = 0;
 	$(document).ready(function() {
 	    $.getJSON('teamlist.json', function(ldata) {
 	     var tsList = "";
 		    for(var j = 1; j <ldata.length + 1;j++){
 		      $.each(ldata, function(oi, oitem) {
 			        var ts = "";
-		if(oitem.standing == String(j)) {
+		k = j;
+		if(oitem.standing == String(k)) {
       			alert("HI");
 		}
 			    
