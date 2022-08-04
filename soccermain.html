@@ -100,7 +100,9 @@
 	$(document).ready(function() {
 	    $.getJSON('teamlist.json', function(ldata) {
 	     var tsList = "";
-		    alert(ldata.length)
+		    for(var j = 1; j <ldata.length;j++){
+		    alert(j)
+		    }
 	    });
 	});
     </script>
