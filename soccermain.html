@@ -99,25 +99,25 @@
 	var winpoint = 0;
 	$(document).ready(function() {
 		alert("Ready");
-	    $.getJSON('teamlist.json', function(data) {
+	    $.getJSON('teamlist.json', function(ldata) {
 		    alert("Get Json");
 	     var tsList = "";
-	for(int j = 1; j < data.length; j++) {
+	for(int j = 1; j < ldata.length; j++) {
 		aelrt("j");
-	      $.each(data, function(i, item) {
+	      $.each(ldata, function(oi, oitem) {
 		      	var ts = "";
 		if(item.standing == j) {
 			alert("HI")
         ts += "<tr>";
-        ts += "  <td>" + item.standing + "</td>";
-	 ts += "  <td>" + item.krteamname + "</td>";
-	numberofmatch = item.win + item.draw + item.loss;
-	ts += "  <td>" + numberofmatch + "</td>";
-	winpoint = item.win * 3 + item.draw;
+        ts += "  <td>" + oitem.standing + "</td>";
+	 ts += "  <td>" + oitem.krteamname + "</td>";
+	numberofmatch = oitem.win + oitem.draw + oitem.loss;
+	ts += "  <td>" + onumberofmatch + "</td>";
+	winpoint = oitem.win * 3 + oitem.draw;
 	ts += "  <td>" + winpoint + "</td>";
-	ts += "  <td>" + item.win + "</td>";
-	ts += "  <td>" + item.draw + "</td>";
-	 ts += "  <td>" + item.loss + "</td>";
+	ts += "  <td>" + oitem.win + "</td>";
+	ts += "  <td>" + oitem.draw + "</td>";
+	 ts += "  <td>" + oitem.loss + "</td>";
         ts += "</tr>";
 		      tsList+=ts;
 		      document.querySelector("#" + "teamstanding" + " tbody").innerHTML = tsList;
