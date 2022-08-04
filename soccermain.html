@@ -104,7 +104,7 @@
 		    var rlength = ldata.length + 1;
 		    alert(rlength)
 		    for(var j = 1; j < rlength ;j++){
-			    alert(j)
+			    
 		      $.each(ldata, function(oi, oitem) {
 			        var ts = "";
 		k = j;
@@ -126,6 +126,7 @@
         ts += "</tr>";
 		      tsList+=ts;
 		      document.querySelector("#" + "teamstanding" + " tbody").innerHTML = tsList;
+			alert(typeof j)
 		}
 			    
 	      });
