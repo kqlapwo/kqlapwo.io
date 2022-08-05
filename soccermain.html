@@ -175,7 +175,7 @@ todaydate = month + "/" + day
 	      $.each(pdata, function(qi, qitem) {
 
 		      matchmonth = qitem.matchdate.slice(0, 4);
-		      		     alert(matchmonth)
+		      alert(matchmonth)
 		      alert(todaydate)
 		      
 		      	var wr = "";
@@ -206,8 +206,6 @@ todaydate = month + "/" + day
 			   numberoftodaymatch = numberoftodaymatch + 1;
 		      }
 	      });
-	      
-	    })
 	if(numberoftodaymatch < 1){
 		document.getElementById("checktodaymatch").innerHTML = "오늘은 경기가 없습니다";
 	};
