@@ -65,6 +65,14 @@
     </table>
 
 <script>
+<div id="current_date"></p>
+date = new Date();
+month = date.getMonth() + 1;
+day = date.getDate();
+weekday = date.getDay();
+
+document.getElementById("current_date").innerHTML = month + "/" + day  + "/" + weekday;
+
 	$(document).ready(function() {
 	
 	    $.getJSON('matchdata.json', function(data) {
