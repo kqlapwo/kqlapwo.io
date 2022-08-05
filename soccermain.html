@@ -204,12 +204,12 @@ todaydate = month + "/" + day
 		      document.querySelector("#" + "todaymatch" + " tbody").innerHTML = wrList;
 			   numberoftodaymatch = numberoftodaymatch + 1;
 		      }
-	if(numberoftodaymatch < 1){
-		document.querySelector("#" + "checktodaymatch" + "div").innerHTML = "오늘은 경기가 없습니다";
-	}
 	      });
 	      
-	    });
+	    })
+	if(numberoftodaymatch < 1){
+		document.getElementById("checktodaymatch").innerHTML = "오늘은 경기가 없습니다";
+	};
 	});
     </script>
 
