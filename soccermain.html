@@ -146,49 +146,7 @@ var thismatchdate = "";
 	    });
 	});
 	
-	$(document).ready(function() {
-	var numberoftodaymatch = 0;
-	    $.getJSON('matchdata.json', function(pdata) {
-	     var wrList = "";
-	      $.each(pdata, function(qi, qitem) {
-
-		      matchmonth = qitem.matchdate.slice(0, 4);
-		      alert(matchmonth)
-		      alert(todaydate)
-		      
-		      	var wr = "";
-		      if(matchmonth == todaydate){
-        wr += "<tr>";
-        wr += "  <td>" + qitem.matchnumber + "</td>";
-        hometeamurl = "teamstatistics.html?" + qitem.hometeamname
-        wr += "  <td>" + "<a href = "+ hometeamurl+ ">"+ qitem.hometeam + "</a>" + "</td>";
-        wr += "  <td>" + qitem.homescore + "</td>";
-        wr += "  <td>" + ":" + "</td>";
-        wr += "  <td>" + qitem.awayscore + "</td>";
-        awayteamurl = "teamstatistics.html?" + qitem.awayteamname 
-        wr += "  <td>" + "<a href = "+ awayteamurl+ ">"+ qitem.awayteam + "</a>" + "</td>";
-        wr += "  <td>" + qitem.matchdate  + "</td>";
-        url = "statistics.html?" + qitem.matchnumber + "/" + "soccer";
-        wr += "  <td tag = 'data'>" + "<a href =" + url + ">" +  "통계" + "</a>"  + "</td>";
-        matchdone = "";
-        if(qitem.homeshoot > 0) {
-            matchdone = "종료"
-        }
-        else{
-            matchdone = "경기전"
-        }
-        wr += "  <td>" + matchdone + "</td>";
-        wr += "</tr>";
-		      wrList+=wr;
-		      document.querySelector("#" + "todaymatch" + " tbody").innerHTML = wrList;
-			   numberoftodaymatch = numberoftodaymatch + 1;
-		      }
-	      });
-	if(numberoftodaymatch < 1){
-		document.getElementById("checktodaymatch").innerHTML = "오늘은 경기가 없습니다";
-	};
-});
-	});
+	
     </script>
 
 </head>
