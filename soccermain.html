@@ -96,9 +96,11 @@ else{
 weekday = week[date.getDay()]
 month = String(month)
 todaydate = month + "/" + day
-
+var thismatchday = "";
+var thismatchmonth = "";
+var thismatchdate = "";
 	$(document).ready(function() {
-	
+	alert("HI");
 	    $.getJSON('matchdata.json', function(data) {
 	     var trList = "";
 	      $.each(data, function(i, item) {
@@ -168,6 +170,7 @@ todaydate = month + "/" + day
 		    }
 	    });
 	});
+	
 	$(document).ready(function() {
 	var numberoftodaymatch = 0;
 	    $.getJSON('matchdata.json', function(pdata) {
