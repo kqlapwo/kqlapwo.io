@@ -173,10 +173,12 @@ todaydate = month + "/" + day
 	    $.getJSON('matchdata.json', function(pdata) {
 	     var wrList = "";
 	      $.each(pdata, function(qi, qitem) {
+
 		      matchmonth = qitem.matchdate.slice(0, 4);
+		      		      
 		      
 		      	var wr = "";
-		      if(matchmonth = todaydate){
+		      if(matchmonth == todaydate){
         wr += "<tr>";
         wr += "  <td>" + qitem.matchnumber + "</td>";
         hometeamurl = "teamstatistics.html?" + qitem.hometeamname
