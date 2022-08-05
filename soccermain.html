@@ -63,15 +63,39 @@
       </thead>
       <tbody></tbody>
     </table>
-<div id="current_date"></p>
-<script>
 
+<div id="current_date">오늘의 경기 </p>
+<table id="todaymatch" class="todaymatch">
+      <thead>
+        <tr>
+          <td>번호</td>
+          <td>홈팀</td>
+          <td></td>
+          <td>:</td>
+          <td></td>
+          <td>원정팀</td>
+          <td>날짜</td>
+          <td>통계</td>
+          <td>경기</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+<script>
+var week = new Array('일', '월', '화', '수', '목', '금', '토');
 date = new Date();
 month = date.getMonth() + 1;
 day = date.getDate();
-weekday = date.getDay();
-
-document.getElementById("current_date").innerHTML = month + "/" + day  + "/" + weekday;
+if(day < 10) {
+	day = "0" + String(day)
+}
+else{
+	day = String(day)
+}
+weekday = week[date.getDay()]
+month = String(month)
+todaydate = month + "/" + day
 
 	$(document).ready(function() {
 	
@@ -142,6 +166,47 @@ document.getElementById("current_date").innerHTML = month + "/" + day  + "/" + w
 	      });
 		      	
 		    }
+	    });
+	});
+	$(document).ready(function() {
+	var numberoftodaymatch = 0;
+	    $.getJSON('matchdata.json', function(pdata) {
+	     var wrList = "";
+	      $.each(pdata, function(qi, qitem) {
+		      matchmonth = qitem.matchdate.slice(0, 4);
+		      
+		      	var wr = "";
+		      if(matchmonth = todaydate){
+        wr += "<tr>";
+        wr += "  <td>" + qitem.matchnumber + "</td>";
+        hometeamurl = "teamstatistics.html?" + qitem.hometeamname
+        wr += "  <td>" + "<a href = "+ hometeamurl+ ">"+ qitem.hometeam + "</a>" + "</td>";
+        wr += "  <td>" + qitem.homescore + "</td>";
+        wr += "  <td>" + ":" + "</td>";
+        wr += "  <td>" + qitem.awayscore + "</td>";
+        awayteamurl = "teamstatistics.html?" + qitem.awayteamname 
+        wr += "  <td>" + "<a href = "+ awayteamurl+ ">"+ qitem.awayteam + "</a>" + "</td>";
+        wr += "  <td>" + qitem.matchdate  + "</td>";
+        url = "statistics.html?" + qitem.matchnumber + "/" + "soccer";
+        wr += "  <td tag = 'data'>" + "<a href =" + url + ">" +  "통계" + "</a>"  + "</td>";
+        matchdone = "";
+        if(qitem.homeshoot > 0) {
+            matchdone = "종료"
+        }
+        else{
+            matchdone = "경기전"
+        }
+        wr += "  <td>" + matchdone + "</td>";
+        wr += "</tr>";
+		      wrList+=wr;
+		      document.querySelector("#" + "todaymatch" + " tbody").innerHTML = wrList;
+			   numberoftodaymatch = numberoftodaymatch + 1;
+		      }
+	if(numberoftodaymatch < 1){
+		document.querySelector("#" + "todaymatch" + " tbody").innerHTML = "오늘은 경기가 없습니다";
+	}
+	      });
+	      
 	    });
 	});
     </script>
