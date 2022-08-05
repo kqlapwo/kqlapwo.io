@@ -1,6 +1,6 @@
-[{"matchnumber" : "1", "hometeam" : "토트넘","hometeamname" : "tottenham", "awayteamname" : "rangers", "awayteam" : "레인저스", "homescore" : "2", "awayscore": "1", "homeshoot" : "17", "awayshoot": "10", "homeotshoot" : "7", "awayotshoot" : "2", "matchdate" : "7/27/3"},
- {"matchnumber" : "2", "hometeam" : "첼시", "awayteam" : "리버풀", "hometeamname" : "chelsea", "awayteamname" : "liverpool", "homescore" : "2", "awayscore": "0", "homeshoot" : "15", "awayshoot": "6", "homeotshoot" : "5", "awayotshoot" : "2", "matchdate" : "7/27/3"}, 
- {"matchnumber" : "3", "hometeam" : "유벤투스", "awayteam" : "나폴리", "hometeamname" : "Juventus", "awayteamname" : "Napoli", "homescore" : "1", "awayscore": "5", "homeshoot" : "5", "awayshoot": "20" , "homeotshoot" : "5", "awayotshoot" : "10", "matchdate" : "7/28/4"}, 
+[{"matchnumber" : "1", "hometeam" : "토트넘","hometeamname" : "tottenham", "awayteamname" : "rangers", "awayteam" : "레인저스", "homescore" : "2", "awayscore": "1", "homeshoot" : "17", "awayshoot": "10", "homeotshoot" : "7", "awayotshoot" : "2", "matchdate" : "7/27/3 "},
+ {"matchnumber" : "2", "hometeam" : "첼시", "awayteam" : "리버풀", "hometeamname" : "chelsea", "awayteamname" : "liverpool", "homescore" : "2", "awayscore": "0", "homeshoot" : "15", "awayshoot": "6", "homeotshoot" : "5", "awayotshoot" : "2", "matchdate" : "7/27/3 "}, 
+ {"matchnumber" : "3", "hometeam" : "유벤투스", "awayteam" : "나폴리", "hometeamname" : "Juventus", "awayteamname" : "Napoli", "homescore" : "1", "awayscore": "5", "homeshoot" : "5", "awayshoot": "20" , "homeotshoot" : "5", "awayotshoot" : "10", "matchdate" : "7/28/4 "}, 
  {"matchnumber" : "4", "hometeam" : "토트넘", "awayteam" : "AS로마", "hometeamname" : "tottenham", "awayteamname" : "Asroma","homescore" : "0", "awayscore": "0", "matchdate" : "8/02/2"},
   {"matchnumber" : "5", "hometeam" : "리버풀", "awayteam" : "풀럼", "hometeamname" : "liverpool", "awayteamname" : "FulhamFC","homescore" : "0", "awayscore": "0", "matchdate" : "8/05/5"}
 ]
