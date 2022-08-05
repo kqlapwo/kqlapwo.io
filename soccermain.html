@@ -180,7 +180,9 @@ var thismatchdate = "";
 	      $.each(pdata, function(qi, qitem) {
 
 		      matchmonth = qitem.matchdate.slice(0, 4);
-		      
+		      thismatchmonth = qitem.matchdate.slice(0,1);
+	thismatchdate = qitem.matchdate.slice(2,4);
+	thismatchday = week[parseInt(qitem.matchdate.slice(5,6))];
 		      	var wr = "";
 		      if(matchmonth == todaydate){
         wr += "<tr>";
@@ -192,7 +194,7 @@ var thismatchdate = "";
         wr += "  <td>" + qitem.awayscore + "</td>";
         awayteamurl = "teamstatistics.html?" + qitem.awayteamname 
         wr += "  <td>" + "<a href = "+ awayteamurl+ ">"+ qitem.awayteam + "</a>" + "</td>";
-        wr += "  <td>" + qitem.matchdate  + "</td>";
+	wr += "  <td>" + thismatchmonth + "월 " + thismatchdate + "일 " + "(" +thismatchday + ")"  + "</td>";
         url = "statistics.html?" + qitem.matchnumber + "/" + "soccer";
         wr += "  <td tag = 'data'>" + "<a href =" + url + ">" +  "통계" + "</a>"  + "</td>";
         matchdone = "";
