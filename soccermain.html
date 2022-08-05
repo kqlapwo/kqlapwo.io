@@ -56,6 +56,9 @@
           <td>승</td>
           <td>무</td>
           <td>패</td>
+	<td>득점</td>
+		<td>실점</td>
+		<td></td>
         </tr>
       </thead>
       <tbody></tbody>
@@ -98,6 +101,7 @@
 	var numberofmatch = 0;
 	var winpoint = 0;
 	var k = 0;
+	var scoredif = 0;
 	$(document).ready(function() {
 	    $.getJSON('teamlist.json', function(ldata) {
 	     var tsList = "";
@@ -118,6 +122,10 @@
 	ts += "  <td>" + oitem.win + "</td>";
 	ts += "  <td>" + oitem.draw + "</td>";
 	 ts += "  <td>" + oitem.loss + "</td>";
+	ts += "  <td>" + oitem.score + "</td>";
+	ts += "  <td>" + oitem.alscore + "</td>";
+	scoredif = oitem.score -  oitem.alscore
+	ts += "  <td>" + scoredif + "</td>";
         ts += "</tr>";
 		      tsList+=ts;
 		      document.querySelector("#" + "teamstanding" + " tbody").innerHTML = tsList;
