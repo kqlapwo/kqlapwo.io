@@ -105,11 +105,11 @@ var thismatchdate = "";
 	       $.each(data, function(i, item) {
 		      	var tr = "";
 	thismatchmonth = item.matchdate.slice(0,1);
-	thismatchdate = item.matchdate.slice(2, 4);
-	thismatchday = week[parseInt(item.matchdate.slice(5,0)];
+	thismatchdate = item.matchdate.slice(2,4);
+	
 	alert(thismatchmonth)
 	alert(thismatchdate)
-	alert(thismatchday)
+
         tr += "<tr>";
         tr += "  <td>" + item.matchnumber + "</td>";
         var hometeamurl = "teamstatistics.html?" + item.hometeamname
