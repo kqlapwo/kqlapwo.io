@@ -122,10 +122,10 @@
 	ts += "  <td>" + oitem.win + "</td>";
 	ts += "  <td>" + oitem.draw + "</td>";
 	 ts += "  <td>" + oitem.loss + "</td>";
-	ts += "  <td>" + oitem.score + "</td>";
-	ts += "  <td>" + oitem.alscore + "</td>";
+	ts += "  <td style='text-align:center'>" + oitem.score + "</td>";
+	ts += "  <td style='text-align:center'>" + oitem.alscore + "</td>";
 	scoredif = oitem.score -  oitem.alscore
-	ts += "  <td>" + scoredif + "</td>";
+	ts += "  <td style='text-align:center'>" + scoredif + "</td>";
         ts += "</tr>";
 		      tsList+=ts;
 		      document.querySelector("#" + "teamstanding" + " tbody").innerHTML = tsList;
