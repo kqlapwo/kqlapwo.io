@@ -1198,6 +1198,7 @@ new naver.sports.home.ScheduleTemplate({"defaultCategoryId" : "amatch"});
   var numberofmatch = 0;
 var teamclassname = "";
   var winpoint = 0;
+var teamranking = "";
         $(document).ready(function() {
 	    $.getJSON('teamlist.json', function(ldata) {
 	     var trList = "";
@@ -1213,8 +1214,10 @@ var teamclassname = "";
 		if(oitem.standing == String(k)) {
                 tr += '<tr >';
 			teamclassname = "rank num" + oitem.standing
+			teamranking = oitem.standing + '위'
 			alert(teamclassname)
-                                    tr += '<th scope="row">' + '<span>' + '<em class=' + teamclassname + '>' + '<span class="blind">' + oitem.standing + '위' + '</span>' + '</em>' + '</span>' + '</th>';
+			alert(teamranking)
+                                    tr += '<th scope="row">' + '<span>' + '<em class=' + teamclassname + '>' + '<span class="blind">' + teamranking + '</span>' + '</em>' + '</span>' + '</th>';
                                     tr += '<td>';
                                         tr += '<div class="wrap">';
                                             tr += '<div class="image emblem">' + '<img width="20" height="20" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="imageLazyLoad" lazy-src="https://dthumb-phinf.pstatic.net/?src=https://sports-phinf.pstatic.net/team/kleague/default/09.png&type=f20_20" alt="" onerror="imageOnError(this);">' + '</div>'
