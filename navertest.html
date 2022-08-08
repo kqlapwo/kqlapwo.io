@@ -1212,7 +1212,8 @@ var teamclassname = "";
 		k = j;
 		if(oitem.standing == String(k)) {
                 tr += '<tr >';
-			teamclassname = "rank_num" + oitem.standing
+			teamclassname = "rank num" + oitem.standing
+			alert(teamclassname)
                                     tr += '<th scope="row">' + '<span>' + '<em class=' + teamclassname + '>' + '<span class="blind">' + oitem.standing + '위' + '</span>' + '</em>' + '</span>' + '</th>';
                                     tr += '<td>';
                                         tr += '<div class="wrap">';
