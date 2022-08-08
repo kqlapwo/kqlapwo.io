@@ -1194,43 +1194,7 @@ new naver.sports.home.ScheduleTemplate({"defaultCategoryId" : "amatch"});
 				</tbody>
 			</table>
             <script>
-            $(document).ready(function() {
-	    $.getJSON('teamlist.json', function(ldata) {
-	     var tsList = "";
-		    var rlength = ldata.length + 1;
-		    for(var j = 1; j < rlength ;j++){
-			    
-		      $.each(ldata, function(oi, oitem) {
-			      alert(j)
-			      alert(oitem.krteamname)
-			      alert(oitem.standing)
-			        var ts = "";
-		k = j;
-		if(oitem.standing == String(k)) {
-      			  ts += "<tr>";
-        ts += "  <td>" + oitem.standing + "</td>";
-	 ts += "  <td>" + oitem.krteamname + "</td>";
-	numberofmatch = oitem.win + oitem.draw + oitem.loss;
-	ts += "  <td style='text-align:center' >" + numberofmatch + "</td>";
-	winpoint = oitem.win * 3 + oitem.draw;
-	ts += "  <td  style='text-align:center' >" + winpoint + "</td>";
-	ts += "  <td>" + oitem.win + "</td>";
-	ts += "  <td>" + oitem.draw + "</td>";
-	 ts += "  <td>" + oitem.loss + "</td>";
-	ts += "  <td style='text-align:center'>" + oitem.score + "</td>";
-	ts += "  <td style='text-align:center'>" + oitem.alscore + "</td>";
-	scoredif = oitem.score -  oitem.alscore
-	ts += "  <td style='text-align:center'>" + scoredif + "</td>";
-        ts += "</tr>";
-		      tsList+=ts;
-		      document.querySelector("#" + "teamstanding" + " tbody").innerHTML = tsList;
-		}
-			    
-	      });
-		      	
-		    }
-	    });
-	});
+            
   var numberofmatch = 0;
   var winpoint = 0;
         $(document).ready(function() {
