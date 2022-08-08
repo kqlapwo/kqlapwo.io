@@ -425,160 +425,20 @@
 					
 						
 						
-							<div class="hmb_list">
+							<div class="hmb_list" id = "hmb_list">
 								<ul>
 						
 						
 					
 					
 						
-						
-						<li class="hmb_list_items  ">
-							<div class="vs_list vs_list1">
-								<div class="inner">
-									
-										<div class="score ">
-											
-												
-												
-													2
-												
-											
-										</div>
-									
-									<span class="image emblem"><img src="https://dthumb-phinf.pstatic.net?src=https://sports-phinf.pstatic.net/team/kleague/default/20.png&type=f28_28&refresh=1" width="28" alt="" onerror="imageOnError(this);"></span>
-									<span class="name">경남</span>
-								</div>
-							</div>
-							<div class="vs_list vs_list2">
-								<div class="inner">
-									
-										<div class="score win">
-											
-												
-												
-													3
-												
-											
-										</div>
-									
-									<span class="image emblem"><img src="https://dthumb-phinf.pstatic.net?src=https://sports-phinf.pstatic.net/team/kleague/default/27.png&type=f28_28&refresh=1" width="28" alt="" onerror="imageOnError(this);"></span>
-									<span class="name">안양</span>
-								</div>
-							</div>
-							<div class="state">
-								<div class="inner">
-									
-										
-										<em>종료</em>
-										
-										
-									
-									
-								</div>
-							</div>
-							<div class="btn_wrap">
-								
-								
-									
-										
-										
-										
-										
-											<a href="/game/202208082027155/relay" target="_blank" onclick="clickcr(this, 'gsc.record', '', '', event);" class="btn">기록</a>
-											
-										
-										
-											<a href="/game/202208082027155/video" onclick="clickcr(this, 'gsc.video', '', '', event);" class="btn">영상</a>
-											
-										
-									
-									
-								
-							</div>
-						</li>
-						
-					
-					
-
-					
 				
 					
 					
 
 					
 						
-						
-						
-					
-					
-						
-						
-						<li class="hmb_list_items  ">
-							<div class="vs_list vs_list1">
-								<div class="inner">
-									
-										<div class="score ">
-											
-												
-												
-													1
-												
-											
-										</div>
-									
-									<span class="image emblem"><img src="https://dthumb-phinf.pstatic.net?src=https://sports-phinf.pstatic.net/team/kleague/default/07.png&type=f28_28&refresh=1" width="28" alt="" onerror="imageOnError(this);"></span>
-									<span class="name">전남</span>
-								</div>
-							</div>
-							<div class="vs_list vs_list2">
-								<div class="inner">
-									
-										<div class="score ">
-											
-												
-												
-													1
-												
-											
-										</div>
-									
-									<span class="image emblem"><img src="https://dthumb-phinf.pstatic.net?src=https://sports-phinf.pstatic.net/team/kleague/default/26.png&type=f28_28&refresh=1" width="28" alt="" onerror="imageOnError(this);"></span>
-									<span class="name">부천</span>
-								</div>
-							</div>
-							<div class="state">
-								<div class="inner">
-									
-										
-										<em>종료</em>
-										
-										
-									
-									
-								</div>
-							</div>
-							<div class="btn_wrap">
-								
-								
-									
-										
-										
-										
-										
-											<a href="/game/202208080726154/relay" target="_blank" onclick="clickcr(this, 'gsc.record', '', '', event);" class="btn">기록</a>
-											
-										
-										
-											<a href="/game/202208080726154/video" onclick="clickcr(this, 'gsc.video', '', '', event);" class="btn">영상</a>
-											
-										
-									
-									
-								
-							</div>
-						</li>
-						
+			
 					
 					
 
@@ -589,7 +449,62 @@
 				
 	</div>
 
-
+<script>
+var trList = "";
+var tr = "";
+tr += '<li class="hmb_list_items  ">'
+							tr += '<div class="vs_list vs_list1">'
+								tr += '<div class="inner">'
+									
+										tr += '<div class="score ">' + 2 + '</div>'
+									
+									tr +='<span class="image emblem">'+ '<img src="https://dthumb-phinf.pstatic.net?src=https://sports-phinf.pstatic.net/team/kleague/default/20.png&type=f28_28&refresh=1" width="28" alt="" onerror="imageOnError(this);">' + '</span>'
+									tr +='<span class="name">경남</span>'
+								tr +='</div>'
+							tr +='</div>'
+							tr +='<div class="vs_list vs_list2">'
+								tr +='<div class="inner">'
+									
+										tr +='<div class="score win">' + 3 + '</div>'
+									
+									tr +='<span class="image emblem">' +' <img src="https://dthumb-phinf.pstatic.net?src=https://sports-phinf.pstatic.net/team/kleague/default/27.png&type=f28_28&refresh=1" width="28" alt="" onerror="imageOnError(this);">'+'</span>'
+									tr +='<span class="name">' + '안양' + '</span>'
+								tr +='</div>'
+							tr +='</div>'
+							tr +='<div class="state">'
+								tr +='<div class="inner">'
+									
+										
+										tr +='<em>' + '종료' +'</em>'
+										
+										
+									
+									
+								tr +='</div>'
+							tr +='</div>'
+							tr +='<div class="btn_wrap">'
+								
+								
+									
+										
+										
+										
+										
+											tr +='<a href="/game/202208082027155/relay" target="_blank" onclick="clickcr(this, "gsc.record", "", "", event);" class="btn">' +'기록' + '</a>'
+											
+										
+										
+											tr +='<a href="/game/202208082027155/video" onclick="clickcr(this, "gsc.video", "", "", event);" class="btn">' + '영상' + '</a>'
+											
+										
+									
+									
+								
+							tr +='</div>'
+						tr +='</li>'
+                        trList += tr;
+                        document.querySelector("#" + "hmb_list"+ " ul").innerHTML = trList;
+</script>
         
     
 </div>
