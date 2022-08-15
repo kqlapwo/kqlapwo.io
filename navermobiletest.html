@@ -669,7 +669,7 @@
           
 				tr += '</div>'
         trList += tr;
-        document.querySelector("#" + "topRecord"+ " div").innerHTML += trList;
+        document.querySelector("#" + "topRecord"+ " div").innerHTML = trList;
   </script>
     
 	    <div class="record_inner">
@@ -709,7 +709,7 @@
     </li>
     {/for}
 	</script>
-	<script type="text/template" id="teamColumnTemplate">
+	<script type="text/template" id="teamColumnTemplate" >
 	<th scope="col"{if sort == 'gameCount'} class="on"{/if}><a href="javascript:sortByColumn({=tableName}, 'gameCount');"><span>경기수</span></a></th>
 	<th scope="col"{if sort == 'gainPoint'} class="on"{/if}><a href="javascript:sortByColumn({=tableName}, 'gainPoint');"><span>승점</span></a></th>
 	<th scope="col"{if sort == 'won'} class="on"{/if}><a href="javascript:sortByColumn({=tableName}, 'won');"><span>승</span></a></th>
@@ -724,66 +724,28 @@
 	</script>
  
 	<script type="text/template" id="teamRecordTemplate">
-  var numberofmatch = 0;
-var teamclassname = "";
-  var winpoint = 0;
-var teamranking = "";
-   $(document).ready(function() {
-	    $.getJSON('teamlist.json', function(ldata) {
-	     var trList = "";
-		    var rlength = ldata.length + 1;
-		    for(var j = 1; j < rlength ;j++){
-			    
-		      $.each(ldata, function(oi, oitem) {
-			        var tr = "";
-         
-		k = j;
-		if(oitem.standing == String(k)) {
-                tr += '<tr >';
-			teamclassname = "rank num" + oitem.standing
-			teamranking = oitem.standing + '위'
-		
-                                    tr += '<th scope="row">' + '<span>' + '<em class=' + '"'  + teamclassname +  '">' + '<span class="blind">' + teamranking + '</span>' + '</em>' + '</span>' + '</th>';
-                                    tr += '<td>';
-                                        tr += '<div class="wrap">';
-                                            tr += '<div class="image emblem">' + '<img width="20" height="20" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="imageLazyLoad" lazy-src="https://dthumb-phinf.pstatic.net/?src=https://sports-phinf.pstatic.net/team/kleague/default/09.png&type=f20_20" alt="" onerror="imageOnError(this);">' + '</div>'
-                                            tr += '<div class="info">'
-                                            numberofmatch = oitem.win + oitem.draw + oitem.loss;
-                                                tr += '<span class="name">' +oitem.krteamname + '</span>'
-                                            tr += '</div>'
-                                        tr += '</div>'
-                                    tr += '</td>'
-                                    
-                                    winpoint = oitem.win * 3 + oitem.draw;
-                                    tr += '<td>' + '<span class="">' + numberofmatch + '</span>' + '</td>'
-                                    tr += '<td>' + '<span class="">' + oitem.win + '</span>' + '</td>'
-                                    tr += '<td>' + '<span class="">' + oitem.draw +'</span>' +'</td>';
-                
-                                    tr += '<td>' + '<span class="">' + oitem.loss + '</span>' + '</td>';
-                                    tr += '<td>' +'<span class="">' + winpoint + '</span>' + '</td>';
-                                tr += '</tr>' 
-                                trList += tr;
-                        {for teamRecord in recordList }
+    {for teamRecord in recordList }
     <tr>
-        <td{if sort == 'gameCount'} class="on"{/if}><span>{=numberofmatch}</span></td>
-		<td{if sort == 'gainPoint'} class="on"{/if}><span>{=winpoint}</span></td>
-        <td{if sort == 'won'} class="on"{/if}><span>{=oitem.win}</span></td>
-        <td{if sort == 'drawn'} class="on"{/if}><span>{=oitem.draw}</span></td>
-        <td{if sort == 'lost'} class="on"{/if}><span>{=oitem.loss}</span></td>
+        <td{if sort == 'gameCount'} class="on"{/if}><span>{=5}</span></td>
+		<td{if sort == 'gainPoint'} class="on"{/if}><span>{=teamRecord.gainPoint}</span></td>
+        <td{if sort == 'won'} class="on"{/if}><span>{=teamRecord.won}</span></td>
+        <td{if sort == 'drawn'} class="on"{/if}><span>{=teamRecord.drawn}</span></td>
+        <td{if sort == 'lost'} class="on"{/if}><span>{=teamRecord.lost}</span></td>
+        <td{if sort == 'gainGoal'} class="on"{/if}><span>{=teamRecord.gainGoal}</span></td>
+        <td{if sort == 'loseGoal'} class="on"{/if}><span>{=teamRecord.loseGoal}</span></td>
+		<td{if sort == 'goalGap'} class="on"{/if}><span>{=teamRecord.goalGap}</span></td>
+        <td{if sort == 'assist'} class="on"{/if}><span>{=teamRecord.assist}</span></td>
+        <td{if sort == 'foul'} class="on"{/if}><span>{=teamRecord.foul}</span></td>
+        <td{if sort == 'dismissal'} class="on"{/if}><span>{=teamRecord.dismissal}</span></td>
     </tr>
     {/for}
-                    }
-                    })
-                    }
-                    })
-                    })
-
 	</script>
 	<script>
-	var teamRecordAsJson = {recordList : [{"teamName":"울산","gainGoal":41,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=01","league":1,"gainPoint":55,"teamCode":"01","loseGoal":22,"foul":237,"dismissal":2,"lost":3,"won":16,"goalGap":19,"rank":1,"assist":22,"drawn":7},{"teamName":"전북","gainGoal":34,"gameType":0,"gameCount":27,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=05","league":1,"gainPoint":49,"teamCode":"05","loseGoal":25,"foul":320,"dismissal":0,"lost":6,"won":14,"goalGap":9,"rank":2,"assist":24,"drawn":7},{"teamName":"포항","gainGoal":35,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=03","league":1,"gainPoint":43,"teamCode":"03","loseGoal":27,"foul":317,"dismissal":0,"lost":7,"won":12,"goalGap":8,"rank":3,"assist":24,"drawn":7},{"teamName":"제주","gainGoal":36,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=04","league":1,"gainPoint":40,"teamCode":"04","loseGoal":30,"foul":267,"dismissal":1,"lost":8,"won":11,"goalGap":6,"rank":4,"assist":28,"drawn":7},{"teamName":"인천","gainGoal":34,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=18","league":1,"gainPoint":40,"teamCode":"18","loseGoal":29,"foul":300,"dismissal":2,"lost":6,"won":10,"goalGap":5,"rank":5,"assist":23,"drawn":10},{"teamName":"수원FC","gainGoal":40,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=29","league":1,"gainPoint":33,"teamCode":"29","loseGoal":42,"foul":263,"dismissal":2,"lost":11,"won":9,"goalGap":-2,"rank":6,"assist":30,"drawn":6},{"teamName":"강원","gainGoal":35,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=21","league":1,"gainPoint":33,"teamCode":"21","loseGoal":39,"foul":276,"dismissal":0,"lost":11,"won":9,"goalGap":-4,"rank":7,"assist":22,"drawn":6},{"teamName":"서울","gainGoal":30,"gameType":0,"gameCount":25,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=09","league":1,"gainPoint":30,"teamCode":"09","loseGoal":31,"foul":239,"dismissal":1,"lost":9,"won":7,"goalGap":-1,"rank":8,"assist":21,"drawn":9},{"teamName":"대구","gainGoal":33,"gameType":0,"gameCount":27,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=17","league":1,"gainPoint":27,"teamCode":"17","loseGoal":39,"foul":398,"dismissal":1,"lost":10,"won":5,"goalGap":-6,"rank":9,"assist":19,"drawn":12},{"teamName":"수원","gainGoal":23,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=02","league":1,"gainPoint":27,"teamCode":"02","loseGoal":32,"foul":303,"dismissal":1,"lost":11,"won":6,"goalGap":-9,"rank":10,"assist":19,"drawn":9},{"teamName":"김천","gainGoal":31,"gameType":0,"gameCount":25,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=35","league":1,"gainPoint":26,"teamCode":"35","loseGoal":30,"foul":252,"dismissal":0,"lost":11,"won":6,"goalGap":1,"rank":11,"assist":18,"drawn":8},{"teamName":"성남","gainGoal":25,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=08","league":1,"gainPoint":18,"teamCode":"08","loseGoal":51,"foul":293,"dismissal":1,"lost":16,"won":4,"goalGap":-26,"rank":12,"assist":15,"drawn":6}], sort:"gainPoint", tableName:"teamRecordAsJson", group:""};
-	var teamRecordGroupAAsJson = {recordList : [{"teamName":"울산","gainGoal":41,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=01","league":1,"gainPoint":55,"teamCode":"01","loseGoal":22,"foul":237,"dismissal":2,"lost":3,"won":16,"goalGap":19,"rank":1,"assist":22,"drawn":7},{"teamName":"전북","gainGoal":34,"gameType":0,"gameCount":27,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=05","league":1,"gainPoint":49,"teamCode":"05","loseGoal":25,"foul":320,"dismissal":0,"lost":6,"won":14,"goalGap":9,"rank":2,"assist":24,"drawn":7},{"teamName":"포항","gainGoal":35,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=03","league":1,"gainPoint":43,"teamCode":"03","loseGoal":27,"foul":317,"dismissal":0,"lost":7,"won":12,"goalGap":8,"rank":3,"assist":24,"drawn":7},{"teamName":"제주","gainGoal":36,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=04","league":1,"gainPoint":40,"teamCode":"04","loseGoal":30,"foul":267,"dismissal":1,"lost":8,"won":11,"goalGap":6,"rank":4,"assist":28,"drawn":7},{"teamName":"인천","gainGoal":34,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=18","league":1,"gainPoint":40,"teamCode":"18","loseGoal":29,"foul":300,"dismissal":2,"lost":6,"won":10,"goalGap":5,"rank":5,"assist":23,"drawn":10},{"teamName":"수원FC","gainGoal":40,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=29","league":1,"gainPoint":33,"teamCode":"29","loseGoal":42,"foul":263,"dismissal":2,"lost":11,"won":9,"goalGap":-2,"rank":6,"assist":30,"drawn":6}], sort:"gainPoint", tableName:"teamRecordGroupAAsJson", group:"A"};
-	var teamRecordGroupBAsJson = {recordList : [{"teamName":"강원","gainGoal":35,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=21","league":1,"gainPoint":33,"teamCode":"21","loseGoal":39,"foul":276,"dismissal":0,"lost":11,"won":9,"goalGap":-4,"rank":7,"assist":22,"drawn":6},{"teamName":"서울","gainGoal":30,"gameType":0,"gameCount":25,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=09","league":1,"gainPoint":30,"teamCode":"09","loseGoal":31,"foul":239,"dismissal":1,"lost":9,"won":7,"goalGap":-1,"rank":8,"assist":21,"drawn":9},{"teamName":"대구","gainGoal":33,"gameType":0,"gameCount":27,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=17","league":1,"gainPoint":27,"teamCode":"17","loseGoal":39,"foul":398,"dismissal":1,"lost":10,"won":5,"goalGap":-6,"rank":9,"assist":19,"drawn":12},{"teamName":"수원","gainGoal":23,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=02","league":1,"gainPoint":27,"teamCode":"02","loseGoal":32,"foul":303,"dismissal":1,"lost":11,"won":6,"goalGap":-9,"rank":10,"assist":19,"drawn":9},{"teamName":"김천","gainGoal":31,"gameType":0,"gameCount":25,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=35","league":1,"gainPoint":26,"teamCode":"35","loseGoal":30,"foul":252,"dismissal":0,"lost":11,"won":6,"goalGap":1,"rank":11,"assist":18,"drawn":8},{"teamName":"성남","gainGoal":25,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=08","league":1,"gainPoint":18,"teamCode":"08","loseGoal":51,"foul":293,"dismissal":1,"lost":16,"won":4,"goalGap":-26,"rank":12,"assist":15,"drawn":6}], sort:"gainPoint", tableName:"teamRecordGroupBAsJson", group:"B"};
-
+		 $.getJSON('naverteamlist.json', function(data) {
+		 var teamRecordAsJson = data
+		 });
+	
+	
 	function sortByColumn(teamRecord, column) {
 		teamRecord['sort'] = column;
 		if (column == 'gainPoint') {
