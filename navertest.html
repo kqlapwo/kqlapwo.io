@@ -1122,16 +1122,13 @@ var teamranking = "";
 			    
 		      $.each(ldata, function(oi, oitem) {
 			        var tr = "";
-              alert(oitem.krteamname)
-		alert(j)
-		alert(oitem.standing)
+         
 		k = j;
 		if(oitem.standing == String(k)) {
                 tr += '<tr >';
 			teamclassname = "rank num" + oitem.standing
 			teamranking = oitem.standing + '위'
-			alert(teamclassname)
-			alert(teamranking)
+		
                                     tr += '<th scope="row">' + '<span>' + '<em class=' + '"'  + teamclassname +  '">' + '<span class="blind">' + teamranking + '</span>' + '</em>' + '</span>' + '</th>';
                                     tr += '<td>';
                                         tr += '<div class="wrap">';
