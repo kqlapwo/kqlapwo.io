@@ -741,10 +741,7 @@
     {/for}
 	</script>
 	<script>
-		$(document).ready(function() {
-		 $.getJSON('naverteamlist.json', function(data) {
-		alert("HI");
-		 var teamRecordAsJson = data;
+		
 		 function sortByColumn(teamRecord, column) {
 		teamRecord['sort'] = column;
 		if (column == 'gainPoint') {
@@ -791,10 +788,7 @@
 		
 	}
 	initTableScroll();
-		 });
-	
-		});
-	
+		 
 
 	</script>
 
