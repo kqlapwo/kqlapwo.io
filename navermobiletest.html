@@ -741,10 +741,12 @@
     {/for}
 	</script>
 	<script>
+		var teamRecordAsJson;
 		$(document).ready(function() {
+			alert("ready")
 		 $.getJSON('naverteamlist.json', function(data) {
-			 
-			var teamRecordAsJson  = data
+			 alert("JSON")
+			teamRecordAsJson  = data
 		 })
 		})
 	function sortByColumn(teamRecord, column) {
