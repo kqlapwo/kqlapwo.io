@@ -748,7 +748,7 @@
 			 alert("pJSON")
 			teamRecordAsJson  = {recordList : [{"teamName":"토트넘","gainGoal":41,"gameType":0,"gameCount":26,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=01","league":1,"gainPoint":55,"teamCode":"01","loseGoal":22,"foul":237,"dismissal":2,"lost":3,"won":16,"goalGap":19,"rank":1,"assist":22,"drawn":7},
 {"teamName":"리버풀","gainGoal":34,"gameType":0,"gameCount":27,"year":2022,"myTeamUrl":"/team/index?category=kleague&teamCode=05","league":1,"gainPoint":49,"teamCode":"05","loseGoal":25,"foul":320,"dismissal":0,"lost":6,"won":14,"goalGap":9,"rank":2,"assist":24,"drawn":7}], sort:"gainPoint", tableName:"teamRecordAsJson", group:""}
-		 })
+		 
 	function sortByColumn(teamRecord, column) {
 		teamRecord['sort'] = column;
 		if (column == 'gainPoint') {
@@ -795,7 +795,7 @@
 		
 	}
 	initTableScroll();
-
+})
 		})
 	</script>
 
