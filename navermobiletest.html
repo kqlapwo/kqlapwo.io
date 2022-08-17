@@ -703,7 +703,7 @@
     <li {if teamRecord.order == 1}class="best"{/if}{if teamRecord.order == (recordList.length * 2) && group == 'B'}class="low"{/if}>
         <a{if teamRecord.myTeamUrl != null} onclick="nclk(this, 'rsr.team', '', '');" href="{=teamRecord.myTeamUrl}"{/if}>
             <span class="rank_num">{=teamRecord.order}</span>
-			<span class="emblem"><img src="https://dthumb-phinf.pstatic.net/?src=https://sports-phinf.pstatic.net/team/wfootball/default/{=teamRecord.teamCode}.png&type=f184_184&refresh=1" width="30" height="30" alt="" onerror="imageOnError(this);"></span>
+			<span class="emblem"><img src="https://kqlapwo.github.io/kqlapwo.io/{=teamRecord.teamCode}.png" width="30" height="30" alt="" onerror="imageOnError(this);"></span>
             <div class="wrap"><span class="team">{=teamRecord.teamName}</span></div>
         </a>
     </li>
