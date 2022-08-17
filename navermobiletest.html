@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="ko">
 <head>
@@ -650,27 +649,7 @@
 	
 	</div>
 	
-	<script>
-    var tr = "";
-    var trList = "";
-    tr += '<div class="record_bx">'
-					tr += '<div class="rank_team">'
-						tr += '<span class="rank_num">' + 5 + '</span>'
-						tr += '<div class="wrap">'
-						tr += 	'<div class="temblem">' + '<img width="60" height="60" src="https://dthumb-phinf.pstatic.net//?src=https://sports-phinf.pstatic.net/team/kleague/default/03.png&type=f184_184&refresh=1" alt="" onerror="imageOnError(this);">' + '</div>'
-							tr += '<b class="name">' + '포항' + '</b>'
-							tr += '<div class="stat">'
-								tr+= '<span class="high">' + '승점' + '<span>' + 43 + '</span>' + ' / 득점' +' <span>' + 35 + '</span>' + '</span>'
-								tr += '<span>' + '12승 7무 7패' + '</span>'
-							tr += '</div>'
-						tr += '</div>'
-					tr += '</div>'
-					tr += '<a onClick="nclk(this, "rsr.team", "", "");" href="/team/index?category=kleague&teamCode=03" class="link">' + '<span>' + '팀페이지' + '</span>' + '</a>'
-          
-				tr += '</div>'
-        trList += tr;
-        document.querySelector("#" + "topRecord"+ " div").innerHTML = trList;
-  </script>
+	
     
 	    <div class="record_inner">
 			<div class="record_rank">
@@ -726,7 +705,7 @@
 	<script type="text/template" id="teamRecordTemplate">
     {for teamRecord in recordList }
     <tr>
-        <td{if sort == 'gameCount'} class="on"{/if}><span>{=5}</span></td>
+        <td{if sort == 'gameCount'} class="on"{/if}><span>{=teamRecord.gameCount}</span></td>
 		<td{if sort == 'gainPoint'} class="on"{/if}><span>{=teamRecord.gainPoint}</span></td>
         <td{if sort == 'won'} class="on"{/if}><span>{=teamRecord.won}</span></td>
         <td{if sort == 'drawn'} class="on"{/if}><span>{=teamRecord.drawn}</span></td>
@@ -794,9 +773,31 @@
 		
 	}
 	initTableScroll();
+	document.querySelector("#" + "topRecord"+ " div").innerHTML = "";
+	for(var i =0; i < teamRecordAsJson.recordList.length;i++){
+    var tr = "";
+    var trList = "";
+    tr += '<div class="record_bx">'
+					tr += '<div class="rank_team">'
+						tr += '<span class="rank_num">' +teamRecordAsJson.recordList[i].rank + '</span>'
+						tr += '<div class="wrap">'
+						tr += 	'<div class="temblem">' + '<img width="60" height="60" src="https://kqlapwo.github.io/kqlapwo.io/'+ teamRecordAsJson.recordList[i].teamCode + '.png" alt="" onerror="imageOnError(this);">' + '</div>'
+							tr += '<b class="name">' + teamRecordAsJson.recordList[i].teamName + '</b>'
+							tr += '<div class="stat">'
+								tr+= '<span class="high">' + '승점' + '<span>' + teamRecordAsJson.recordList[i].gainPoint + '</span>' + ' / 득점' +' <span>' + teamRecordAsJson.recordList[i].gainGoal + '</span>' + '</span>'
+								tr += '<span>' + teamRecordAsJson.recordList[i].won + '승 ' + teamRecordAsJson.recordList[i].drawn + '무 ' + teamRecordAsJson.recordList[i].lost + '패' + '</span>'
+							tr += '</div>'
+						tr += '</div>'
+					tr += '</div>'
+					tr += '<a onClick="nclk(this, "rsr.team", "", "");" href="/team/index?category=kleague&teamCode=03" class="link">' + '<span>' + '팀페이지' + '</span>' + '</a>'
+          
+				tr += '</div>'
+        trList += tr;
+        document.querySelector("#" + "topRecord"+ " div").innerHTML += trList;
+							}
 })
-	</script>
 
+	</script>
 
 
 
